@@ -1,11 +1,8 @@
 import "./App.css";
+import Home from './pages/Home'
 
 function App() {
-  return (
-    <div>
-      <h1 className="text-4xl font-bold text-blue-600">Hola, soy Sergio</h1>
-    </div>
-  );
+  return <Home />
 }
 
 export default App;
