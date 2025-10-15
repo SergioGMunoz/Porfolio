@@ -1,4 +1,4 @@
-import { useAccentColor } from '../hooks/useAccentColor';
+import { useAccentColor } from '@/hooks/useAccentColor';
 
 const ColorSwitcher = () => {
   const { setAccentByName, availableColors, changeAccentColor } = useAccentColor();
