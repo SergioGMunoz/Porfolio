@@ -1,10 +1,9 @@
 import { FloatingDock } from "@/components/ui/floating-dock";
 import HomeIcon from "@mui/icons-material/Home";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
 import { useAccentColor } from "@/hooks/useAccentColor";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const NavBar = () => {
   // Scrolling to sections
