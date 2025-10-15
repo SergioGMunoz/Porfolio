@@ -1,4 +1,4 @@
-import { TextAnimate } from "./ui/text-animate.tsx"
+import { TextAnimate } from "@/components/ui/text-animate.tsx"
 
 const About = () => {
   return (
