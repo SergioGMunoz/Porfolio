@@ -1,24 +1,18 @@
-import { useEffect } from 'react';
-
-interface AccentColor {
-  name: string;
-  value: string;
-}
-
-// Colores predefinidos que puedes usar
-export const ACCENT_COLORS: AccentColor[] = [
-  { name: 'blue', value: '#004aad' },
-  { name: 'green', value: '#22c55e' },
-  { name: 'purple', value: '#8b5cf6' },
-  { name: 'red', value: '#ef4444' },
-  { name: 'orange', value: '#f97316' },
-  { name: 'pink', value: '#ec4899' },
-];
+import { useRef } from 'react';
+import { ColorCycler, ACCENT_COLORS } from '@/lib/colorUtils';
 
 export const useAccentColor = () => {
+  const colorCyclerRef = useRef(new ColorCycler());
+  const colorCycler = colorCyclerRef.current;
+
   const changeAccentColor = (color: string) => {
-    // Cambiar la variable CSS directamente en el documento
-    document.documentElement.style.setProperty('--color-accent', color);
+    colorCycler.changeAccentColor(color);
+  };
+
+  const cycleToNextColor = () => {
+    const nextColor = colorCycler.getNextColor();
+    colorCycler.changeAccentColor(nextColor.value);
+    return nextColor;
   };
 
   const setAccentByName = (colorName: string) => {
@@ -28,14 +22,34 @@ export const useAccentColor = () => {
     }
   };
 
+  const setAccentByIndex = (index: number) => {
+    const color = colorCycler.setColorByIndex(index);
+    colorCycler.changeAccentColor(color.value);
+    return color;
+  };
+
+  const getCurrentColor = () => {
+    return colorCycler.getCurrentColor();
+  };
+
+  const getNextColor = () => {
+    const currentIndex = colorCycler.getCurrentColor();
+    const currentColorIndex = ACCENT_COLORS.findIndex(color => color.name === currentIndex.name);
+    const nextIndex = (currentColorIndex + 1) % ACCENT_COLORS.length;
+    return ACCENT_COLORS[nextIndex];
+  };
+
   const resetAccentColor = () => {
-    // Volver al color por defecto
     changeAccentColor('#004aad');
   };
 
   return {
     changeAccentColor,
+    cycleToNextColor,
     setAccentByName,
+    setAccentByIndex,
+    getCurrentColor,
+    getNextColor,
     resetAccentColor,
     availableColors: ACCENT_COLORS
   };
