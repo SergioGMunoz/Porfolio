@@ -107,13 +107,28 @@ function IconContainer({
 
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   // Manejar click en móvil
   const handleClick = () => {
-    onClick();
     if (isMobile) {
+      // Mostrar efecto ANTES de ejecutar la acción
       setClicked(true);
-      setTimeout(() => setClicked(false), 1000); // Volver a normal después de 1 segundo
+      setIsAnimating(true);
+      
+      // Ejecutar la acción después de un pequeño delay para que se vea el efecto
+      setTimeout(() => {
+        onClick();
+      }, 200); // Delay de 200ms para ver el efecto
+      
+      // Ocultar tooltip después de 1.2 segundos
+      setTimeout(() => setClicked(false), 1200);
+      
+      // Terminar animación de bounce después de 1s (más lento)
+      setTimeout(() => setIsAnimating(false), 1000);
+    } else {
+      // En desktop ejecutar inmediatamente
+      onClick();
     }
   };
 
@@ -130,6 +145,18 @@ function IconContainer({
         onMouseEnter={!isMobile ? () => setHovered(true) : undefined}
         onMouseLeave={!isMobile ? () => setHovered(false) : undefined}
         className="relative flex aspect-square items-center justify-center rounded-full"
+        animate={
+          isMobile && isAnimating
+            ? {
+                scale: [1, 1.4, 1], // Scale bastante notable: crece 40% y vuelve
+              }
+            : {}
+        }
+        transition={{
+          duration: 1.0, // Duración de 1 segundo
+          ease: "easeOut",
+          times: [0, 0.4, 1], // Timing controlado para el efecto
+        }}
       >
         <AnimatePresence>
           {(hovered || (isMobile && clicked)) && (
