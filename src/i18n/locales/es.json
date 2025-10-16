@@ -5,7 +5,7 @@
     "dark": "oscuro",
     "light": "claro",
     "color": "Color {{color}}",
-    "language": "Cambiar a {{lang}}"
+    "language": "{{lang}}"
   },
   "hero": {
     "greeting": "Hola, soy Sergio",
