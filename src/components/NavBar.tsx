@@ -3,7 +3,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
-import LanguageIcon from "@mui/icons-material/Language";
+import TranslateIcon from '@mui/icons-material/Translate';
 import { useTheme } from "@/hooks/useTheme";
 import { useLanguage } from "@/hooks/useLanguage";
 import { useTranslation } from "react-i18next";
@@ -65,6 +65,11 @@ const NavBar = () => {
       onClick: () => scrollToSection("#home"),
     },
     {
+      title: t('navbar.language', { lang: currentLanguage === 'es' ? 'English' : 'Español' }),
+      icon: <TranslateIcon className="text-accent" />,
+      onClick: handleLanguageToggle,
+    },
+    {
       title: t('navbar.theme', { mode: nextTheme === 'dark' ? t('navbar.dark') : t('navbar.light') }),
       icon: isDark ? 
         <LightModeIcon className="text-accent" /> : 
@@ -75,11 +80,6 @@ const NavBar = () => {
       title: t('navbar.color', { color: getTranslatedColorName(nextColor.name) }),
       icon: <ColorLensIcon style={{ color: nextColor.value }} />,
       onClick: handleAccentColor,
-    },
-    {
-      title: t('navbar.language', { lang: currentLanguage === 'es' ? 'English' : 'Español' }),
-      icon: <LanguageIcon className="text-accent" />,
-      onClick: handleLanguageToggle,
     },
   ];
 

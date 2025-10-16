@@ -2,9 +2,9 @@
   "navbar": {
     "home": "Home",
     "theme": "{{mode}} mode",
-    "dark": "dark",
-    "light": "light",
-    "color": "Change color ({{color}})",
+    "dark": "Dark",
+    "light": "Light",
+    "color": "Color {{color}}",
     "language": "Switch to {{lang}}"
   },
   "hero": {

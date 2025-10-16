@@ -4,7 +4,7 @@
     "theme": "Modo {{mode}}",
     "dark": "oscuro",
     "light": "claro",
-    "color": "Cambiar color ({{color}})",
+    "color": "Color {{color}}",
     "language": "Cambiar a {{lang}}"
   },
   "hero": {
@@ -18,7 +18,7 @@
   "colors": {
     "blue": "azul",
     "green": "verde", 
-    "purple": "púrpura",
+    "purple": "morado",
     "red": "rojo",
     "orange": "naranja",
     "pink": "rosa"
