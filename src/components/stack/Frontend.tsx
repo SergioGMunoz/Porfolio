@@ -109,7 +109,7 @@ export function FrontendTechnologies() {
   return (
     <div className="mb-8">
       <h3 
-        className="text-3xl font-bold text-center mb-8 transition-all duration-500 opacity-0 animate-fade-in text-accent"
+        className="text-3xl font-bold text-center mb-2 transition-all duration-500 opacity-0 animate-fade-in text-accent"
         style={{ 
           color: 'var(--color-accent)',
           animationDelay: '0.2s',

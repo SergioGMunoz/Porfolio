@@ -7,7 +7,7 @@ const Stack = () => {
   
   return (
     <section id="Stack" className="py-8 px-4">
-      <div className="max-w-7xl mx-auto space-y-8">
+      <div className="max-w-7xl mx-auto space-y-2">
         {/* Frontend Technologies */}
         <FrontendTechnologies />
         
