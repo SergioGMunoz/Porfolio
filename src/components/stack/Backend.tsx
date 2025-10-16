@@ -112,15 +112,15 @@ export function BackendTechnologies() {
           ))}
         </Marquee>
         
-        {/* Gradients que se adaptan al tema usando variables CSS */}
+        {/* Gradients que se adaptan al tema usando variables CSS - responsivos */}
         <div 
-          className="pointer-events-none absolute inset-y-0 left-0 w-1/4"
+          className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-16 md:w-1/4"
           style={{
             background: `linear-gradient(to right, var(--bg-primary), transparent)`
           }}
         ></div>
         <div 
-          className="pointer-events-none absolute inset-y-0 right-0 w-1/4"
+          className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-16 md:w-1/4"
           style={{
             background: `linear-gradient(to left, var(--bg-primary), transparent)`
           }}
