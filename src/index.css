@@ -48,6 +48,11 @@ body {
   color: var(--color-accent) !important;
 }
 
+/* Clase para fill de SVG */
+.fill-accent {
+  fill: var(--color-accent) !important;
+}
+
 /* Clases para diferentes tipos de texto */
 .text-primary {
   color: var(--text-primary) !important;
