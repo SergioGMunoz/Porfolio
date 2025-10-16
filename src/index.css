@@ -63,3 +63,8 @@ body {
   color: var(--text-secondary) !important;
   transition: color 0.3s ease;
 }
+
+/* Ocultar cursor nativo cuando el pointer personalizado está activo */
+* {
+  cursor: none !important;
+}
