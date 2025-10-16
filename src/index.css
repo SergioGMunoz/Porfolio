@@ -1,22 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
+/* Prevenir scroll horizontal */
+html, body {
+  overflow-x: hidden;
+}
+
 :root {
   --color-accent: #3b82f6;
   --font-family-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   
   /* Colores del tema claro */
-  --bg-primary: #f3f4f6;
+  --bg-primary: #e5e7eb;
   --bg-secondary: #ffffff;
   --text-primary: #000000; /* Negro puro para textos genéricos */
   --text-secondary: #6b7280;
-  --border-color: #e5e7eb;
+  --border-color: #d1d5db;
   
   /* Colores para FloatingDock */
   --dock-bg: #9ca3af; /* gray-400 - más oscuro */
   --dock-button: #d1d5db; /* gray-300 - más claro */
-  --dock-tooltip-bg: #f3f4f6;
-  --dock-tooltip-border: #e5e7eb;
+  --dock-tooltip-bg: #e5e7eb;
+  --dock-tooltip-border: #d1d5db;
   --dock-tooltip-text: #374151;
 }
 
@@ -67,4 +72,73 @@ body {
 /* Ocultar cursor nativo cuando el pointer personalizado está activo */
 * {
   cursor: none !important;
+}
+
+/* Animaciones Marquee - Efecto tren continuo */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Clases de animación para Marquee */
+.animate-marquee {
+  animation: marquee var(--duration, 40s) linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 40s) linear infinite;
+}
+
+/* Pausa en hover para marquee */
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+.group:hover .animate-marquee-vertical {
+  animation-play-state: paused;
+}
+
+/* Estilos para drag-to-scroll */
+.marquee-container {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.marquee-container:active {
+  cursor: grabbing !important;
+}
+
+.marquee-container * {
+  pointer-events: none;
+}
+
+/* Animación fade-in para títulos */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
 }

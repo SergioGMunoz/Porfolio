@@ -12,4 +12,4 @@ Siempre que crees o arregles algo nuevo ten en cuenta como estan hechas cosas si
 
 HAz todo siempre segun las mejores practicas a no ser que te indique una forma concreta 
 
-No hagas resumen final de las cosas que has cambiado, temina el chat mejor con un 👍🏻 Listo! 
+No hagas resumen final de las cosas que has cambiado, temina el chat mejor con un: 👍🏻 Listo! 

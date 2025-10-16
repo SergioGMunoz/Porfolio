@@ -9,9 +9,10 @@ const About = () => {
       <TextAnimate 
         key={i18n.language}
         animation="slideLeft" 
-        delay={0.5} 
         duration={1} 
         by="character"
+        startOnView={false}
+        delay={0.5}
       >
         {t('hero.about')}
       </TextAnimate>

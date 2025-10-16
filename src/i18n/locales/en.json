@@ -5,7 +5,7 @@
     "dark": "Dark",
     "light": "Light",
     "color": "Color {{color}}",
-    "language": "Switch to {{lang}}"
+    "language": "{{lang}}"
   },
   "hero": {
     "greeting": "Hello, I'm Sergio",
@@ -22,5 +22,20 @@
     "red": "red",
     "orange": "orange",
     "pink": "pink"
+  },
+  "stack": {
+    "title": "Technology Stack",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "others": "Other Tools",
+    "database": "Databases & Cloud"
+  },
+  "levels": {
+    "1": "Basic",
+    "2": "Intermediate", 
+    "3": "Advanced"
+  },
+  "methodologies": {
+    "agile": "Agile Methodology"
   }
 }

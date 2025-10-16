@@ -5,7 +5,7 @@
     "dark": "oscuro",
     "light": "claro",
     "color": "Color {{color}}",
-    "language": "Cambiar a {{lang}}"
+    "language": "{{lang}}"
   },
   "hero": {
     "greeting": "Hola, soy Sergio",
@@ -18,9 +18,24 @@
   "colors": {
     "blue": "azul",
     "green": "verde", 
-    "purple": "morado",
+    "purple": "púrpura",
     "red": "rojo",
     "orange": "naranja",
     "pink": "rosa"
+  },
+  "stack": {
+    "title": "Stack Tecnológico",
+    "frontend": "Frontend",
+    "backend": "Backend", 
+    "others": "Otras Herramientas",
+    "database": "Bases de Datos y Cloud"
+  },
+  "levels": {
+    "1": "Básico",
+    "2": "Intermedio", 
+    "3": "Avanzado"
+  },
+  "methodologies": {
+    "agile": "Metodología Ágil"
   }
 }
