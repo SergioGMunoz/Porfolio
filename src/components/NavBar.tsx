@@ -3,7 +3,10 @@ import HomeIcon from "@mui/icons-material/Home";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
+import LanguageIcon from "@mui/icons-material/Language";
 import { useTheme } from "@/hooks/useTheme";
+import { useLanguage } from "@/hooks/useLanguage";
+import { useTranslation } from "react-i18next";
 
 const NavBar = () => {
   const { 
@@ -13,6 +16,14 @@ const NavBar = () => {
     getNextTheme,
     isDark 
   } = useTheme();
+  
+  const { currentLanguage, toggleLanguage } = useLanguage();
+  const { t } = useTranslation();
+
+  // Helper function to translate color names
+  const getTranslatedColorName = (colorName: string) => {
+    return t(`colors.${colorName}`);
+  };
 
   // Scrolling to sections
   const scrollToSection = (id: string) => {
@@ -38,27 +49,37 @@ const NavBar = () => {
     console.log('Variable CSS --color-accent:', currentAccent);
   };
 
+  // Language switching
+  const handleLanguageToggle = () => {
+    toggleLanguage();
+  };
+
   // Obtener el siguiente color para preview
   const nextColor = getNextColor();
   const nextTheme = getNextTheme();
 
   const links = [
     {
-      title: "Home",
+      title: t('navbar.home'),
       icon: <HomeIcon className="text-accent" />,
       onClick: () => scrollToSection("#home"),
     },
     {
-      title: `Modo ${nextTheme === 'dark' ? 'oscuro' : 'claro'}`,
+      title: t('navbar.theme', { mode: nextTheme === 'dark' ? t('navbar.dark') : t('navbar.light') }),
       icon: isDark ? 
         <LightModeIcon className="text-accent" /> : 
         <DarkModeIcon className="text-accent" />,
       onClick: handleThemeToggle,
     },
     {
-      title: `Cambiar color (${nextColor.name})`,
+      title: t('navbar.color', { color: getTranslatedColorName(nextColor.name) }),
       icon: <ColorLensIcon style={{ color: nextColor.value }} />,
       onClick: handleAccentColor,
+    },
+    {
+      title: t('navbar.language', { lang: currentLanguage === 'es' ? 'English' : 'Español' }),
+      icon: <LanguageIcon className="text-accent" />,
+      onClick: handleLanguageToggle,
     },
   ];
 
