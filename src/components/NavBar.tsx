@@ -1,11 +1,19 @@
 import { FloatingDock } from "@/components/ui/floating-dock";
 import HomeIcon from "@mui/icons-material/Home";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
-import { useAccentColor } from "@/hooks/useAccentColor";
-import { useState } from "react";
+import { useTheme } from "@/hooks/useTheme";
 
 const NavBar = () => {
+  const { 
+    toggleTheme, 
+    cycleToNextColor, 
+    getNextColor, 
+    getNextTheme,
+    isDark 
+  } = useTheme();
+
   // Scrolling to sections
   const scrollToSection = (id: string) => {
     const element = document.querySelector(id);
@@ -14,18 +22,19 @@ const NavBar = () => {
     }
   };
 
-  // Dark Mode
-  const handleDarkMode = () => {
-    console.log("darkmode");
+  // Dark Mode Toggle
+  const handleThemeToggle = () => {
+    toggleTheme();
   };
 
   // Color Changing
-  const { cycleToNextColor, getNextColor } = useAccentColor();
-  const [nextColor, setNextColor] = useState(getNextColor());
   const handleAccentColor = () => {
     cycleToNextColor();
-    setNextColor(getNextColor());
   };
+
+  // Obtener el siguiente color para preview
+  const nextColor = getNextColor();
+  const nextTheme = getNextTheme();
 
   const links = [
     {
@@ -34,12 +43,14 @@ const NavBar = () => {
       onClick: () => scrollToSection("#home"),
     },
     {
-      title: "Modo Oscuro",
-      icon: <DarkModeIcon className="text-accent" />,
-      onClick: handleDarkMode,
+      title: `Cambiar a modo ${nextTheme === 'dark' ? 'oscuro' : 'claro'}`,
+      icon: isDark ? 
+        <LightModeIcon className="text-accent" /> : 
+        <DarkModeIcon className="text-accent" />,
+      onClick: handleThemeToggle,
     },
     {
-      title: `Cambiar Color`,
+      title: `Cambiar color (siguiente: ${nextColor.name})`,
       icon: <ColorLensIcon style={{ color: nextColor.value }} />,
       onClick: handleAccentColor,
     },
