@@ -24,12 +24,12 @@ export default {
       },
       keyframes: {
         marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-100%)' },
+          from: { transform: 'translateX(0%)' },
+          to: { transform: 'translateX(-100%)' },
         },
         'marquee-vertical': {
-          '0%': { transform: 'translateY(0%)' },
-          '100%': { transform: 'translateY(-100%)' },
+          from: { transform: 'translateY(0%)' },
+          to: { transform: 'translateY(-100%)' },
         },
       },
     }
