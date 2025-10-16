@@ -29,7 +29,7 @@ const otherTechnologies = [
     icon: <SiFigma size={32} style={{ color: '#F24E1E' }} />, // Color oficial de Figma
   },
   {
-    name: "Metodología Ágil",
+    name: "Agile",
     level: 3,
     icon: <FaTasks size={32} style={{ color: 'var(--text-primary)' }} />, // Ícono para metodologías
   },
