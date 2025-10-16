@@ -1,0 +1,26 @@
+{
+  "navbar": {
+    "home": "Home",
+    "theme": "{{mode}} mode",
+    "dark": "Dark",
+    "light": "Light",
+    "color": "Color {{color}}",
+    "language": "Switch to {{lang}}"
+  },
+  "hero": {
+    "greeting": "Hello, I'm Sergio",
+    "about": "I've started studying web development in search of a profession that would keep me motivated and offer me a more stable future for my personal life. Today, I'm really glad I made that decision, because I enjoy the industry, I have fun working on each project, and I'm very motivated to keep learning and growing as a professional."
+  },
+  "theme": {
+    "light": "light",
+    "dark": "dark"
+  },
+  "colors": {
+    "blue": "blue",
+    "green": "green", 
+    "purple": "purple",
+    "red": "red",
+    "orange": "orange",
+    "pink": "pink"
+  }
+}

@@ -1,8 +1,10 @@
 # Instrucciones a tener en cuenta SIEMPRE en cada peticion que te haga a no ser que explicitamente te diga lo contrario
 
-Resuelve o crea exactamente lo que te indico en el promt y si ves cosas por el camino para cambiar ofrecemelo pero no lo hagas por tu cuent 
+Resuelve o crea exactamente lo que te indico en el promt y si ves cosas por el camino para cambiar ofrecemelo pero no lo hagas por tu cuenta
 
-EL codigo se escribe en ingles, los textos para la UI en principio en español hasta que incorporemos el paquete de idioma
+El codigo se escribe en ingles
+
+Los textos para la UIse gestionan desde el paquete de idioma no directamente en el componente
 
 Ten en cuenta el modo Oscuro y lsa forma de implementarlo con CSS no TAILWIND siempre que crees un componente
 

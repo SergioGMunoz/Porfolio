@@ -1,0 +1,26 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "theme": "Modo {{mode}}",
+    "dark": "oscuro",
+    "light": "claro",
+    "color": "Color {{color}}",
+    "language": "Cambiar a {{lang}}"
+  },
+  "hero": {
+    "greeting": "Hola, soy Sergio",
+    "about": "Comencé a estudiar desarrollo web en busca de una profesión que me mantuviera motivado y me ofreciera un futuro más estable para mi vida personal. Hoy, estoy muy contento de haber tomado esa decisión, porque disfruto de la industria, me divierto trabajando en cada proyecto, y estoy muy motivado para seguir aprendiendo y creciendo como profesional."
+  },
+  "theme": {
+    "light": "claro",
+    "dark": "oscuro"
+  },
+  "colors": {
+    "blue": "azul",
+    "green": "verde", 
+    "purple": "morado",
+    "red": "rojo",
+    "orange": "naranja",
+    "pink": "rosa"
+  }
+}
