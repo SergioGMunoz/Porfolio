@@ -54,7 +54,7 @@ const TechnologyCard = ({
   return (
     <figure
       className={cn(
-        "relative h-full w-48 cursor-pointer overflow-hidden rounded-xl p-4 transition-all duration-300",
+        "relative h-full w-32 sm:w-40 md:w-48 cursor-pointer overflow-hidden rounded-xl p-2 sm:p-3 md:p-4 transition-all duration-300",
         "hover:scale-105 hover:shadow-lg"
       )}
       style={{
@@ -63,19 +63,19 @@ const TechnologyCard = ({
         border: '1px solid var(--border-color)',
       }}
     >
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center gap-2 sm:gap-3">
         <div className="flex items-center justify-center">
           {icon}
         </div>
         <div className="text-center">
           <figcaption 
-            className="text-lg font-semibold"
+            className="text-sm sm:text-base md:text-lg font-semibold"
             style={{ color: 'var(--text-primary)' }}
           >
             {name}
           </figcaption>
           <p 
-            className="text-sm font-medium"
+            className="text-xs sm:text-sm font-medium"
             style={{ color: 'var(--text-secondary)' }}
           >
             {t(`levels.${level}`)}
