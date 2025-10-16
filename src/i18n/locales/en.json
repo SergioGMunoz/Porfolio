@@ -22,5 +22,11 @@
     "red": "red",
     "orange": "orange",
     "pink": "pink"
+  },
+  "stack": {
+    "title": "Technology Stack",
+    "frontend": "Frontend Technologies",
+    "backend": "Backend Technologies",
+    "others": "Other Tools"
   }
 }

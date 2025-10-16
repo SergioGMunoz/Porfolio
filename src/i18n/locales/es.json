@@ -18,9 +18,15 @@
   "colors": {
     "blue": "azul",
     "green": "verde", 
-    "purple": "morado",
+    "purple": "púrpura",
     "red": "rojo",
     "orange": "naranja",
     "pink": "rosa"
+  },
+  "stack": {
+    "title": "Stack Tecnológico",
+    "frontend": "Tecnologías Frontend",
+    "backend": "Tecnologías Backend",
+    "others": "Otras Herramientas"
   }
 }
