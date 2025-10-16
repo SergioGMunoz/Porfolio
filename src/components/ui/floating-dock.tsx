@@ -8,7 +8,7 @@ import {
   AnimatePresence,
 } from "motion/react";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export const FloatingDock = ({
   items,
@@ -18,10 +18,24 @@ export const FloatingDock = ({
   className?: string;
 }) => {
   let mouseX = useMotionValue(Infinity);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar si es móvil/tablet
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
   return (
     <motion.div
-      onMouseMove={(e) => mouseX.set(e.pageX)}
-      onMouseLeave={() => mouseX.set(Infinity)}
+      onMouseMove={!isMobile ? (e) => mouseX.set(e.pageX) : undefined}
+      onMouseLeave={!isMobile ? () => mouseX.set(Infinity) : undefined}
       className={cn(
         "mx-auto flex h-16 items-end gap-4 rounded-2xl px-4 pb-3",
         className
@@ -32,7 +46,7 @@ export const FloatingDock = ({
       }}
     >
       {items.map((item) => (
-        <IconContainer mouseX={mouseX} key={item.title} {...item} />
+        <IconContainer mouseX={mouseX} key={item.title} isMobile={isMobile} {...item} />
       ))}
     </motion.div>
   );
@@ -43,11 +57,13 @@ function IconContainer({
   title,
   icon,
   onClick,
+  isMobile,
 }: {
   mouseX: MotionValue;
   title: string;
   icon: React.ReactNode;
   onClick: () => void;
+  isMobile: boolean;
 }) {
   let ref = useRef<HTMLDivElement>(null);
 
@@ -90,9 +106,19 @@ function IconContainer({
   });
 
   const [hovered, setHovered] = useState(false);
+  const [clicked, setClicked] = useState(false);
+
+  // Manejar click en móvil
+  const handleClick = () => {
+    onClick();
+    if (isMobile) {
+      setClicked(true);
+      setTimeout(() => setClicked(false), 1000); // Volver a normal después de 1 segundo
+    }
+  };
 
   return (
-    <button onClick={onClick}>
+    <button onClick={handleClick}>
       <motion.div
         ref={ref}
         style={{ 
@@ -101,12 +127,12 @@ function IconContainer({
           backgroundColor: 'var(--dock-button)',
           transition: 'background-color 0.3s ease'
         }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        onMouseEnter={!isMobile ? () => setHovered(true) : undefined}
+        onMouseLeave={!isMobile ? () => setHovered(false) : undefined}
         className="relative flex aspect-square items-center justify-center rounded-full"
       >
         <AnimatePresence>
-          {hovered && (
+          {(hovered || (isMobile && clicked)) && (
             <motion.div
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
