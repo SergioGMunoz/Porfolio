@@ -106,8 +106,15 @@ export function OtherTechnologies() {
   const { t } = useTranslation();
   
   return (
-    <div className="mb-16">
-      <h3 className="text-3xl font-bold text-center mb-12" style={{ color: 'var(--text-primary)' }}>
+    <div className="mb-8">
+      <h3 
+        className="text-3xl font-bold text-center mb-8 transition-all duration-500 opacity-0 animate-fade-in text-accent"
+        style={{ 
+          color: 'var(--color-accent)',
+          animationDelay: '0.6s',
+          animationFillMode: 'forwards'
+        }}
+      >
         {t('stack.others')}
       </h3>
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
