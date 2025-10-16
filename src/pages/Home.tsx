@@ -2,6 +2,7 @@ import About from "@/components/About";
 import NavBar from "@/components/NavBar";
 import ProfilePhoto from "@/components/ProfilePhoto";
 import Title from "@/components/Title";
+import Stack from "@/components/Stack";
 import { useTheme } from "@/hooks/useTheme";
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
         </div>
       </section>
       <NavBar/>
+      <Stack/>
     </main>
   );
 };
