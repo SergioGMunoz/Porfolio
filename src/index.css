@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --color-accent: #004aad;
+  --color-accent: #3b82f6;
   --font-family-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   
   /* Colores del tema claro */
@@ -27,4 +27,9 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Clase directa para el color de acento */
+.text-accent {
+  color: var(--color-accent) !important;
 }

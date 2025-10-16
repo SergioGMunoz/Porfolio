@@ -29,7 +29,13 @@ const NavBar = () => {
 
   // Color Changing
   const handleAccentColor = () => {
-    cycleToNextColor();
+    const newColor = cycleToNextColor();
+    console.log('Nuevo color aplicado:', newColor);
+    
+    // Verificar que la variable CSS se haya actualizado
+    const rootStyles = getComputedStyle(document.documentElement);
+    const currentAccent = rootStyles.getPropertyValue('--color-accent');
+    console.log('Variable CSS --color-accent:', currentAccent);
   };
 
   // Obtener el siguiente color para preview

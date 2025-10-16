@@ -4,7 +4,7 @@ interface AccentColor {
 }
 
 export const ACCENT_COLORS: AccentColor[] = [
-  { name: 'blue', value: '#004aad' },
+  { name: 'blue', value: '#3b82f6' },
   { name: 'green', value: '#22c55e' },
   { name: 'purple', value: '#8b5cf6' },
   { name: 'red', value: '#ef4444' },

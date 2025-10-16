@@ -5,8 +5,10 @@ export const useTheme = () => {
   const [currentTheme, setCurrentTheme] = useState<ThemeMode>(themeManager.getCurrentTheme());
   const [currentColor, setCurrentColor] = useState(themeManager.getCurrentColor());
 
-  // Sincronizar con cambios externos (si es necesario)
+  // Inicializar el tema al montar el componente
   useEffect(() => {
+    // El constructor ya aplica el tema inicial
+    
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === 'theme') {
         setCurrentTheme(themeManager.getCurrentTheme());
@@ -51,6 +53,7 @@ export const useTheme = () => {
   const cycleToNextColor = () => {
     const newColor = themeManager.cycleToNextColor();
     setCurrentColor(newColor);
+    console.log('Color cambiado a:', newColor.name, newColor.value); // Debug
     return newColor;
   };
 
