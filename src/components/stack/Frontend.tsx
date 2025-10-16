@@ -118,7 +118,7 @@ export function FrontendTechnologies() {
         {t('stack.frontend')}
       </h3>
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-        <Marquee pauseOnHover={true} className="[--duration:25s]">
+        <Marquee pauseOnHover={true} className="[--duration:25s] marquee-container">
           {frontendTechnologies.map((tech, index) => (
             <TechnologyCard 
               key={`${tech.name}-${index}`} 

@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from "react"
+import { ComponentPropsWithoutRef, useRef, useState, useEffect } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -42,11 +42,60 @@ export function Marquee({
   repeat = 4,
   ...props
 }: MarqueeProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState(0);
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleMouseDown = (e: MouseEvent) => {
+      setIsDragging(true);
+      setDragStart(vertical ? e.clientY : e.clientX);
+      container.style.cursor = 'grabbing';
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging) return;
+      
+      const currentPos = vertical ? e.clientY : e.clientX;
+      const diff = currentPos - dragStart;
+      
+      setScrollOffset(prev => prev + diff);
+      setDragStart(currentPos);
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      container.style.cursor = 'grab';
+    };
+
+    const handleMouseLeave = () => {
+      setIsDragging(false);
+      container.style.cursor = 'grab';
+    };
+
+    container.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+    container.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      container.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+      container.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, [isDragging, dragStart, vertical]);
+
   return (
     <div
+      ref={containerRef}
       {...props}
       className={cn(
-        "flex [gap:var(--gap)] overflow-hidden p-2 [--duration:40s] [--gap:1rem]",
+        "flex [gap:var(--gap)] overflow-hidden p-2 [--duration:40s] [--gap:1rem] cursor-grab select-none",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
@@ -54,6 +103,9 @@ export function Marquee({
         },
         className
       )}
+      style={{
+        cursor: isDragging ? 'grabbing' : 'grab',
+      }}
     >
       {Array(repeat)
         .fill(0)
@@ -61,10 +113,16 @@ export function Marquee({
           <div
             key={i}
             className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
-              "animate-marquee flex-row": !vertical,
-              "animate-marquee-vertical flex-col": vertical,
+              "animate-marquee flex-row": !vertical && !isDragging,
+              "animate-marquee-vertical flex-col": vertical && !isDragging,
               "[animation-direction:reverse]": reverse,
             })}
+            style={{
+              transform: isDragging 
+                ? `translate${vertical ? 'Y' : 'X'}(${scrollOffset}px)` 
+                : undefined,
+              transition: isDragging ? 'none' : undefined,
+            }}
           >
             {children}
           </div>
