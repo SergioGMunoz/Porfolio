@@ -104,7 +104,7 @@ const TechnologyCard = ({
 export function TechnologyMarquee() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-      <Marquee pauseOnHover className="[--duration:25s]">
+      <Marquee pauseOnHover={true} className="[--duration:25s]">
         {frontendTechnologies.map((tech, index) => (
           <TechnologyCard 
             key={`${tech.name}-${index}`} 
@@ -114,8 +114,20 @@ export function TechnologyMarquee() {
           />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white dark:from-gray-900"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white dark:from-gray-900"></div>
+      
+      {/* Gradients que se adaptan al tema usando variables CSS */}
+      <div 
+        className="pointer-events-none absolute inset-y-0 left-0 w-1/4"
+        style={{
+          background: `linear-gradient(to right, var(--bg-primary), transparent)`
+        }}
+      ></div>
+      <div 
+        className="pointer-events-none absolute inset-y-0 right-0 w-1/4"
+        style={{
+          background: `linear-gradient(to left, var(--bg-primary), transparent)`
+        }}
+      ></div>
     </div>
   )
 }
