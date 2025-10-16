@@ -102,7 +102,11 @@ export function DatabaseTechnologies() {
         {t('stack.database')}
       </h3>
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-        <Marquee pauseOnHover={true} className="[--duration:28s] marquee-container" reverse>
+        <Marquee 
+          pauseOnHover={false} 
+          className="[--duration:7s] sm:[--duration:18s] md:[--duration:22s] marquee-container" 
+          reverse
+        >
           {databaseTechnologies.map((tech, index) => (
             <TechnologyCard 
               key={`${tech.name}-${index}`} 

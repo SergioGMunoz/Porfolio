@@ -101,7 +101,11 @@ export function BackendTechnologies() {
         {t('stack.backend')}
       </h3>
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-        <Marquee pauseOnHover={true} className="[--duration:30s] marquee-container" reverse>
+        <Marquee 
+          pauseOnHover={false} 
+          className="[--duration:7s] sm:[--duration:18s] md:[--duration:22s] marquee-container" 
+          reverse
+        >
           {backendTechnologies.map((tech, index) => (
             <TechnologyCard 
               key={`${tech.name}-${index}`} 

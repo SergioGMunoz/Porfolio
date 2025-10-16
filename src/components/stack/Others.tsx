@@ -101,7 +101,10 @@ export function OtherTechnologies() {
         {t('stack.others')}
       </h3>
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-        <Marquee pauseOnHover={true} className="[--duration:35s] marquee-container">
+        <Marquee 
+          pauseOnHover={false} 
+          className="[--duration:6s] sm:[--duration:17s] md:[--duration:21s] marquee-container"
+        >
           {otherTechnologies.map((tech, index) => (
             <TechnologyCard 
               key={`${tech.name}-${index}`} 
