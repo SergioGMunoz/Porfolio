@@ -97,6 +97,15 @@ body {
   animation: marquee-vertical var(--duration, 40s) linear infinite;
 }
 
+/* Pausa en hover para marquee */
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+.group:hover .animate-marquee-vertical {
+  animation-play-state: paused;
+}
+
 /* Animación fade-in para títulos */
 @keyframes fade-in {
   from {

@@ -25,8 +25,8 @@
   },
   "stack": {
     "title": "Stack Tecnológico",
-    "frontend": "Tecnologías Frontend",
-    "backend": "Tecnologías Backend",
+    "frontend": "Frontend",
+    "backend": "Backend", 
     "others": "Otras Herramientas"
   }
 }
