@@ -5,56 +5,38 @@ import { useTranslation } from "react-i18next";
 import { 
   FaGitAlt,
   FaLinux,
-  FaApple,
-  FaWindows
+  FaTasks
 } from 'react-icons/fa';
 import { 
   SiFigma,
-  SiNotion,
-  SiSlack 
+  SiNotion
 } from 'react-icons/si';
-import { VscCode } from 'react-icons/vsc';
 
 const otherTechnologies = [
   {
-    name: "Figma",
-    level: "Avanzado",
-    icon: <SiFigma size={32} style={{ color: '#F24E1E' }} />, // Color oficial de Figma
-  },
-  {
     name: "Git",
-    level: "Avanzado",
+    level: 3,
     icon: <FaGitAlt size={32} style={{ color: '#F05032' }} />, // Color oficial de Git
   },
   {
     name: "Linux",
-    level: "Intermedio", 
+    level: 2, 
     icon: <FaLinux size={32} style={{ color: '#FCC624' }} />, // Color oficial de Linux
   },
   {
-    name: "VS Code",
-    level: "Avanzado",
-    icon: <VscCode size={32} style={{ color: '#007ACC' }} />, // Color oficial de VS Code
+    name: "Figma",
+    level: 1,
+    icon: <SiFigma size={32} style={{ color: '#F24E1E' }} />, // Color oficial de Figma
   },
   {
-    name: "macOS",
-    level: "Avanzado",
-    icon: <FaApple size={32} style={{ color: 'var(--text-primary)' }} />, // Usa color del tema
-  },
-  {
-    name: "Windows",
-    level: "Avanzado",
-    icon: <FaWindows size={32} style={{ color: '#0078D4' }} />, // Color oficial de Windows
+    name: "Metodología Ágil",
+    level: 3,
+    icon: <FaTasks size={32} style={{ color: 'var(--text-primary)' }} />, // Ícono para metodologías
   },
   {
     name: "Notion",
-    level: "Intermedio",
+    level: 3,
     icon: <SiNotion size={32} style={{ color: 'var(--text-primary)' }} />, // Usa color del tema
-  },
-  {
-    name: "Slack",
-    level: "Avanzado",
-    icon: <SiSlack size={32} style={{ color: '#4A154B' }} />, // Color oficial de Slack
   },
 ];
 
@@ -65,8 +47,9 @@ const TechnologyCard = ({
 }: {
   icon: React.ReactNode
   name: string
-  level: string
+  level: number
 }) => {
+  const { t } = useTranslation();
   return (
     <figure
       className={cn(
@@ -94,7 +77,7 @@ const TechnologyCard = ({
             className="text-sm font-medium"
             style={{ color: 'var(--text-secondary)' }}
           >
-            {level}
+            {t(`levels.${level}`)}
           </p>
         </div>
       </div>

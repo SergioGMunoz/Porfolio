@@ -1,60 +1,42 @@
 import { Marquee } from "../ui/marquee";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
-// React Icons - logos reales de tecnologías frontend
+// React Icons - logos de bases de datos y cloud
 import { 
-  FaReact, 
-  FaJs, 
-  FaBootstrap
+  FaAws,
+  FaCloud
 } from 'react-icons/fa';
 import { 
-  SiTypescript, 
-  SiNextdotjs, 
-  SiTailwindcss, 
-  SiVite,
-  SiVuedotjs
+  SiMysql,
+  SiMongodb,
+  SiOracle
 } from 'react-icons/si';
 
-const frontendTechnologies = [
+const databaseTechnologies = [
   {
-    name: "React",
+    name: "MySQL",
     level: 3,
-    icon: <FaReact size={32} style={{ color: '#61DAFB' }} />, // Color oficial de React
+    icon: <SiMysql size={32} style={{ color: '#4479A1' }} />, // Color oficial de MySQL
   },
   {
-    name: "TypeScript",
+    name: "PL/SQL",
     level: 3,
-    icon: <SiTypescript size={32} style={{ color: '#3178C6' }} />, // Color oficial de TypeScript
+    icon: <SiOracle size={32} style={{ color: '#F80000' }} />, // Color oficial de Oracle
   },
   {
-    name: "JavaScript",
-    level: 3, 
-    icon: <FaJs size={32} style={{ color: '#F7DF1E' }} />, // Color oficial de JavaScript
-  },
-  {
-    name: "Tailwind CSS",
-    level: 3,
-    icon: <SiTailwindcss size={32} style={{ color: '#06B6D4' }} />, // Color oficial de Tailwind
-  },
-  {
-    name: "Bootstrap",
+    name: "MongoDB",
     level: 2,
-    icon: <FaBootstrap size={32} style={{ color: '#7952B3' }} />, // Color oficial de Bootstrap
+    icon: <SiMongodb size={32} style={{ color: '#47A248' }} />, // Color oficial de MongoDB
   },
   {
-    name: "Vue.js",
+    name: "Azure",
     level: 1,
-    icon: <SiVuedotjs size={32} style={{ color: '#4FC08D' }} />, // Color oficial de Vue
+    icon: <FaCloud size={32} style={{ color: '#0078D4' }} />, // Ícono genérico de cloud para Azure
   },
   {
-    name: "Next.js",
+    name: "AWS",
     level: 1,
-    icon: <SiNextdotjs size={32} style={{ color: 'var(--text-primary)' }} />, // Usa color del tema
-  },
-  {
-    name: "Vite",
-    level: 1,
-    icon: <SiVite size={32} style={{ color: '#646CFF' }} />, // Color oficial de Vite
+    icon: <FaAws size={32} style={{ color: '#FF9900' }} />, // Color oficial de AWS
   },
 ];
 
@@ -68,6 +50,7 @@ const TechnologyCard = ({
   level: number
 }) => {
   const { t } = useTranslation();
+  
   return (
     <figure
       className={cn(
@@ -103,7 +86,7 @@ const TechnologyCard = ({
   )
 };
 
-export function FrontendTechnologies() {
+export function DatabaseTechnologies() {
   const { t } = useTranslation();
   
   return (
@@ -112,15 +95,15 @@ export function FrontendTechnologies() {
         className="text-3xl font-bold text-center mb-8 transition-all duration-500 opacity-0 animate-fade-in text-accent"
         style={{ 
           color: 'var(--color-accent)',
-          animationDelay: '0.2s',
+          animationDelay: '0.6s',
           animationFillMode: 'forwards'
         }}
       >
-        {t('stack.frontend')}
+        {t('stack.database')}
       </h3>
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-        <Marquee pauseOnHover={true} className="[--duration:25s] marquee-container">
-          {frontendTechnologies.map((tech, index) => (
+        <Marquee pauseOnHover={true} className="[--duration:28s] marquee-container" reverse>
+          {databaseTechnologies.map((tech, index) => (
             <TechnologyCard 
               key={`${tech.name}-${index}`} 
               icon={tech.icon}

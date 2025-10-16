@@ -1,5 +1,6 @@
 import { FrontendTechnologies } from "./stack/Frontend";
 import { BackendTechnologies } from "./stack/Backend";
+import { DatabaseTechnologies } from "./stack/Database";
 import { OtherTechnologies } from "./stack/Others";
 
 const Stack = () => {
@@ -12,6 +13,9 @@ const Stack = () => {
         
         {/* Backend Technologies */}
         <BackendTechnologies />
+        
+        {/* Database & Cloud Technologies */}
+        <DatabaseTechnologies />
         
         {/* Other Tools */}
         <OtherTechnologies />

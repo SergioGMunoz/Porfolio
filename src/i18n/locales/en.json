@@ -27,6 +27,15 @@
     "title": "Technology Stack",
     "frontend": "Frontend",
     "backend": "Backend",
-    "others": "Other Tools"
+    "others": "Other Tools",
+    "database": "Databases & Cloud"
+  },
+  "levels": {
+    "1": "Basic",
+    "2": "Intermediate", 
+    "3": "Advanced"
+  },
+  "methodologies": {
+    "agile": "Agile Methodology"
   }
 }

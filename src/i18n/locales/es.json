@@ -27,6 +27,15 @@
     "title": "Stack Tecnológico",
     "frontend": "Frontend",
     "backend": "Backend", 
-    "others": "Otras Herramientas"
+    "others": "Otras Herramientas",
+    "database": "Bases de Datos y Cloud"
+  },
+  "levels": {
+    "1": "Básico",
+    "2": "Intermedio", 
+    "3": "Avanzado"
+  },
+  "methodologies": {
+    "agile": "Metodología Ágil"
   }
 }

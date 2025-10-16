@@ -5,56 +5,38 @@ import { useTranslation } from "react-i18next";
 import { 
   FaNodeJs,
   FaPython,
-  FaDatabase,
-  FaDocker
+  FaJava
 } from 'react-icons/fa';
 import { 
-  SiExpress,
-  SiMongodb,
-  SiPostgresql,
-  SiPrisma 
+  SiPhp,
+  SiLaravel
 } from 'react-icons/si';
 
 const backendTechnologies = [
   {
-    name: "Node.js",
-    level: "Avanzado",
-    icon: <FaNodeJs size={32} style={{ color: '#339933' }} />, // Color oficial de Node.js
+    name: "PHP",
+    level: 3,
+    icon: <SiPhp size={32} style={{ color: '#777BB4' }} />, // Color oficial de PHP
   },
   {
-    name: "Express",
-    level: "Avanzado",
-    icon: <SiExpress size={32} style={{ color: 'var(--text-primary)' }} />, // Usa color del tema
+    name: "Laravel",
+    level: 3,
+    icon: <SiLaravel size={32} style={{ color: '#FF2D20' }} />, // Color oficial de Laravel
+  },
+  {
+    name: "Java",
+    level: 3,
+    icon: <FaJava size={32} style={{ color: '#ED8B00' }} />, // Color original naranja de Java
   },
   {
     name: "Python",
-    level: "Intermedio", 
+    level: 2, 
     icon: <FaPython size={32} style={{ color: '#3776AB' }} />, // Color oficial de Python
   },
   {
-    name: "MongoDB",
-    level: "Avanzado",
-    icon: <SiMongodb size={32} style={{ color: '#47A248' }} />, // Color oficial de MongoDB
-  },
-  {
-    name: "PostgreSQL",
-    level: "Intermedio",
-    icon: <SiPostgresql size={32} style={{ color: '#4169E1' }} />, // Color oficial de PostgreSQL
-  },
-  {
-    name: "Prisma",
-    level: "Intermedio",
-    icon: <SiPrisma size={32} style={{ color: '#2D3748' }} />, // Color oficial de Prisma
-  },
-  {
-    name: "Docker",
-    level: "Básico",
-    icon: <FaDocker size={32} style={{ color: '#2496ED' }} />, // Color oficial de Docker
-  },
-  {
-    name: "SQL",
-    level: "Avanzado",
-    icon: <FaDatabase size={32} style={{ color: '#336791' }} />, // Color genérico para bases de datos
+    name: "Node.js",
+    level: 2,
+    icon: <FaNodeJs size={32} style={{ color: '#339933' }} />, // Color oficial de Node.js
   },
 ];
 
@@ -65,8 +47,9 @@ const TechnologyCard = ({
 }: {
   icon: React.ReactNode
   name: string
-  level: string
+  level: number
 }) => {
+  const { t } = useTranslation();
   return (
     <figure
       className={cn(
@@ -94,7 +77,7 @@ const TechnologyCard = ({
             className="text-sm font-medium"
             style={{ color: 'var(--text-secondary)' }}
           >
-            {level}
+            {t(`levels.${level}`)}
           </p>
         </div>
       </div>
