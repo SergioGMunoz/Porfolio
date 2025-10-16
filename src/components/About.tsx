@@ -11,6 +11,8 @@ const About = () => {
         animation="slideLeft" 
         duration={1} 
         by="character"
+        startOnView={false}
+        delay={0.5}
       >
         {t('hero.about')}
       </TextAnimate>
