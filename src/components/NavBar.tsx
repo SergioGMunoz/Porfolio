@@ -49,14 +49,14 @@ const NavBar = () => {
       onClick: () => scrollToSection("#home"),
     },
     {
-      title: `Cambiar a modo ${nextTheme === 'dark' ? 'oscuro' : 'claro'}`,
+      title: `Modo ${nextTheme === 'dark' ? 'oscuro' : 'claro'}`,
       icon: isDark ? 
         <LightModeIcon className="text-accent" /> : 
         <DarkModeIcon className="text-accent" />,
       onClick: handleThemeToggle,
     },
     {
-      title: `Cambiar color (siguiente: ${nextColor.name})`,
+      title: `Cambiar color (${nextColor.name})`,
       icon: <ColorLensIcon style={{ color: nextColor.value }} />,
       onClick: handleAccentColor,
     },
