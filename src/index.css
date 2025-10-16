@@ -1,7 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-@theme {
-  --color-accent: #004aad;
+:root {
+  --color-accent: #3b82f6;
   --font-family-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  
+  /* Colores del tema claro */
+  --bg-primary: #f3f4f6;
+  --bg-secondary: #ffffff;
+  --text-primary: #000000; /* Negro puro para textos genéricos */
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  
+  /* Colores para FloatingDock */
+  --dock-bg: #9ca3af; /* gray-400 - más oscuro */
+  --dock-button: #d1d5db; /* gray-300 - más claro */
+  --dock-tooltip-bg: #f3f4f6;
+  --dock-tooltip-border: #e5e7eb;
+  --dock-tooltip-text: #374151;
+}
+
+.dark {
+  /* Colores del tema oscuro */
+  --bg-primary: #1f1f1f; /* Gris oscuro menos azulado */
+  --bg-secondary: #2a2a2a; /* Gris medio oscuro */
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --border-color: #404040;
+  
+  /* Colores para FloatingDock en modo oscuro */
+  --dock-bg: #171717; /* neutral-900 */
+  --dock-button: #262626; /* neutral-800 */
+  --dock-tooltip-bg: #262626;
+  --dock-tooltip-border: #404040;
+  --dock-tooltip-text: #ffffff;
+}
+
+/* Aplicar las variables a elementos base */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Clase directa para el color de acento */
+.text-accent {
+  color: var(--color-accent) !important;
+}
+
+/* Clases para diferentes tipos de texto */
+.text-primary {
+  color: var(--text-primary) !important;
+  transition: color 0.3s ease;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+  transition: color 0.3s ease;
 }

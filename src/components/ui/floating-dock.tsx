@@ -23,9 +23,13 @@ export const FloatingDock = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto flex h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 dark:bg-neutral-900",
+        "mx-auto flex h-16 items-end gap-4 rounded-2xl px-4 pb-3",
         className
       )}
+      style={{ 
+        backgroundColor: 'var(--dock-bg)',
+        transition: 'background-color 0.3s ease'
+      }}
     >
       {items.map((item) => (
         <IconContainer mouseX={mouseX} key={item.title} {...item} />
@@ -91,10 +95,15 @@ function IconContainer({
     <button onClick={onClick}>
       <motion.div
         ref={ref}
-        style={{ width, height }}
+        style={{ 
+          width, 
+          height,
+          backgroundColor: 'var(--dock-button)',
+          transition: 'background-color 0.3s ease'
+        }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800"
+        className="relative flex aspect-square items-center justify-center rounded-full"
       >
         <AnimatePresence>
           {hovered && (
@@ -102,7 +111,14 @@ function IconContainer({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="absolute -top-8 left-1/2 w-fit rounded-md border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs whitespace-pre text-neutral-700 dark:border-neutral-900 dark:bg-neutral-800 dark:text-white"
+              className="absolute -top-8 left-1/2 w-fit rounded-md px-2 py-0.5 text-xs whitespace-pre"
+              style={{
+                backgroundColor: 'var(--dock-tooltip-bg)',
+                borderColor: 'var(--dock-tooltip-border)',
+                color: 'var(--dock-tooltip-text)',
+                border: '1px solid var(--dock-tooltip-border)',
+                transition: 'all 0.3s ease'
+              }}
             >
               {title}
             </motion.div>

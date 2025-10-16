@@ -1,46 +1,40 @@
 import { useRef } from 'react';
-import { ColorCycler, ACCENT_COLORS } from '@/lib/colorUtils';
+import { ThemeManager, ACCENT_COLORS } from '@/lib/colorUtils';
 
 export const useAccentColor = () => {
-  const colorCyclerRef = useRef(new ColorCycler());
-  const colorCycler = colorCyclerRef.current;
+  const themeManagerRef = useRef(new ThemeManager());
+  const themeManager = themeManagerRef.current;
 
   const changeAccentColor = (color: string) => {
-    colorCycler.changeAccentColor(color);
-  };
-
-  const cycleToNextColor = () => {
-    const nextColor = colorCycler.getNextColor();
-    colorCycler.changeAccentColor(nextColor.value);
-    return nextColor;
-  };
-
-  const setAccentByName = (colorName: string) => {
-    const color = ACCENT_COLORS.find(c => c.name === colorName);
-    if (color) {
-      changeAccentColor(color.value);
+    // Buscar el color por su valor y establecerlo
+    const colorObj = ACCENT_COLORS.find(c => c.value === color);
+    if (colorObj) {
+      themeManager.setColorByName(colorObj.name);
     }
   };
 
+  const cycleToNextColor = () => {
+    return themeManager.cycleToNextColor();
+  };
+
+  const setAccentByName = (colorName: string) => {
+    themeManager.setColorByName(colorName);
+  };
+
   const setAccentByIndex = (index: number) => {
-    const color = colorCycler.setColorByIndex(index);
-    colorCycler.changeAccentColor(color.value);
-    return color;
+    return themeManager.setColorByIndex(index);
   };
 
   const getCurrentColor = () => {
-    return colorCycler.getCurrentColor();
+    return themeManager.getCurrentColor();
   };
 
   const getNextColor = () => {
-    const currentIndex = colorCycler.getCurrentColor();
-    const currentColorIndex = ACCENT_COLORS.findIndex(color => color.name === currentIndex.name);
-    const nextIndex = (currentColorIndex + 1) % ACCENT_COLORS.length;
-    return ACCENT_COLORS[nextIndex];
+    return themeManager.getNextColor();
   };
 
   const resetAccentColor = () => {
-    changeAccentColor('#004aad');
+    themeManager.setColorByIndex(0); // Reset al primer color (azul)
   };
 
   return {

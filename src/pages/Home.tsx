@@ -2,10 +2,16 @@ import About from "@/components/About";
 import NavBar from "@/components/NavBar";
 import ProfilePhoto from "@/components/ProfilePhoto";
 import Title from "@/components/Title";
+import { useTheme } from "@/hooks/useTheme";
 
 const Home = () => {
+  useTheme(); // Activar el sistema de temas
+  
   return (
-    <main id='home' className="min-h-screen bg-gray-100 flex flex-col items-center justify-center gap-4 relative p-4">
+    <main 
+      id='home' 
+      className="min-h-screen flex flex-col items-center justify-center gap-4 relative p-4"
+    >
         {/* About */}
       <section className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-4 gap-6 items-center">
         <div className="lg:col-span-1 flex justify-center">
