@@ -1,22 +1,30 @@
 import { useTranslation } from "react-i18next";
 import ProjectCard from "@/components/projects/ProjectCard";
+import { TextAnimate } from "@/components/ui/text-animate";
 // Proyect: [{id, title, description, stack, picture, link, readmeLink }]
 import projectsData from "./data/projectsData";
 const Projects = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div>
       {/* Title Projects */}
       <h3
-        className="text-3xl font-bold text-center mb-2 transition-all duration-500 opacity-0 animate-fade-in text-accent"
+        className="text-3xl font-bold text-center mb-2"
         style={{
           color: "var(--color-accent)",
-          animationDelay: "0.2s",
-          animationFillMode: "forwards",
         }}
       >
-        {t("projects.title")}
+        <TextAnimate
+          key={`projects-title-${i18n.language}`}
+          animation="slideUp"
+          duration={0.8}
+          by="character"
+          startOnView={true}
+          delay={0.1}
+        >
+          {t("projects.title")}
+        </TextAnimate>
       </h3>
       {/* Projects */}
       <div>
