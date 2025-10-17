@@ -4,13 +4,14 @@ import ProfilePhoto from "@/components/ProfilePhoto";
 import Title from "@/components/Title";
 import Stack from "@/components/Stack";
 import { useTheme } from "@/hooks/useTheme";
+import Proyects from "@/components/Proyects";
 
 const Home = () => {
   useTheme(); // Activar el sistema de temas
-  
+
   return (
-    <main 
-      id='home' 
+    <main
+      id="home"
       className="min-h-screen flex flex-col items-center justify-center relative p-4 pb-48"
     >
       {/* Hero Section */}
@@ -23,12 +24,16 @@ const Home = () => {
           <About />
         </div>
       </section>
-      
-      {/* Stack Technologies - Inmediatamente después */}
-      <Stack/>
-      
+
+      {/* Stack Technologies */}
+      <Stack />
+
+      {/* Proyects */}
+      <Proyects/>
+
+
       {/* Gradiente global desde abajo para integrar el dock - transición suave */}
-      <div 
+      <div
         className="pointer-events-none fixed bottom-0 left-0 right-0 h-72 z-40 opacity-75"
         style={{
           background: `linear-gradient(to top, 
@@ -38,12 +43,12 @@ const Home = () => {
             var(--bg-primary) 25%, 
             transparent 50%, 
             transparent 70%, 
-            transparent 100%)`
+            transparent 100%)`,
         }}
       ></div>
-      
+
       {/* Navigation */}
-      <NavBar/>
+      <NavBar />
     </main>
   );
 };

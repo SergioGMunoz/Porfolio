@@ -37,5 +37,8 @@
   },
   "methodologies": {
     "agile": "Metodología Ágil"
+  },
+  "proyects" : {
+    "title":"Proyectos"
   }
 }
