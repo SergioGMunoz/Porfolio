@@ -4,7 +4,7 @@ import ProfilePhoto from "@/components/ProfilePhoto";
 import Title from "@/components/Title";
 import Stack from "@/components/Stack";
 import { useTheme } from "@/hooks/useTheme";
-import Proyects from "@/components/Proyects";
+import Projects from "@/components/Projects";
 
 const Home = () => {
   useTheme(); // Activar el sistema de temas
@@ -28,8 +28,8 @@ const Home = () => {
       {/* Stack Technologies */}
       <Stack />
 
-      {/* Proyects */}
-      <Proyects/>
+      {/* Projects */}
+      <Projects/>
 
 
       {/* Gradiente global desde abajo para integrar el dock - transición suave */}

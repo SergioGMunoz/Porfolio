@@ -39,6 +39,10 @@
     "agile": "Agile Methodology"
   },
    "proyects" : {
-    "title":"Proyects"
+    "title":"Proyects",
+    "MurciaH&R" : {
+      "title" : "MurciaH&R",
+      "description" : "Project that show hotels and restaurants in Murcia / Spain and you cant filter the information and navegate to the institution link"
+    }
   }
 }

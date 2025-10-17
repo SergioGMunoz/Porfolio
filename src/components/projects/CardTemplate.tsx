@@ -9,7 +9,7 @@ import {
 } from "motion/react";
 import { cn } from "@/lib/utils";
 
-export const CometCard = ({
+const CardTemplate = ({
   rotateDepth = 17.5,
   translateDepth = 20,
   className,
@@ -113,3 +113,5 @@ export const CometCard = ({
     </div>
   );
 };
+
+export default CardTemplate;
