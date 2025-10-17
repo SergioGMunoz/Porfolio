@@ -7,7 +7,7 @@ const Projects = () => {
 
   return (
     <div>
-      {/* Title Proyects */}
+      {/* Title Projects */}
       <h3
         className="text-3xl font-bold text-center mb-2 transition-all duration-500 opacity-0 animate-fade-in text-accent"
         style={{
@@ -16,9 +16,9 @@ const Projects = () => {
           animationFillMode: "forwards",
         }}
       >
-        {t("proyects.title")}
+        {t("projects.title")}
       </h3>
-      {/* Proyects */}
+      {/* Projects */}
       <div>
         {projectsData.length <= 0 ? (
           <p>No hay proyectos a mostrar actualmente</p>

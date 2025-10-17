@@ -20,10 +20,8 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
     //   <h1>{projectData.titleKey}</h1>
     //   <img ></img>
     <CardTemplate>
-      <button
-        type="button"
-        className="my-10 flex w-80 cursor-pointer flex-col items-stretch rounded-[16px] border-0 bg-[#1F2121] p-2 saturate-0 md:my-20 md:p-4"
-        aria-label="View invite F7RA"
+      <div
+        className="flex w-80 flex-col gap-2 rounded-[16px] border-0 bg-[#1F2121] dark:bg-[#fafafa] p-2  md:my-20 md:p-4"
         style={{
           transformStyle: "preserve-3d",
           transform: "none",
@@ -31,15 +29,21 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
         }}
       >
         {/* Title */}
-        <div className="mt-2 flex flex-shrink-0 items-center justify-between p-4 font-mono text-white">
-          <div className="text-xs">{t(projectData.titleKey)}</div>
-          <div className="text-xs text-gray-300 opacity-50">
-            {t(projectData.descriptionKey)}
-          </div>
+        <div className="flex flex-col items-center justify-between  text-accent">
+          <h5
+            className="text-2xl font-bold text-center transition-all duration-500 opacity-0 animate-fade-in text-accent"
+            style={{
+              color: "var(--color-accent)",
+              animationDelay: "0.2s",
+              animationFillMode: "forwards",
+            }}
+          >
+            {t(projectData.titleKey)}
+          </h5>
         </div>
         {/* IMG */}
-        <div className="mx-2 flex-1">
-          <div className="relative mt-2 aspect-video w-full">
+        <div className="flex-1">
+          <div className="relative aspect-video w-full">
             <img
               loading="lazy"
               className="absolute inset-0 h-full w-full rounded-[16px] bg-[#000000] object-cover contrast-75"
@@ -52,7 +56,12 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
             />
           </div>
         </div>
-      </button>
+        {/* Description */}
+        <div>
+          <p className=" text-xs text-black dark:text-gray-300 opacity-75">{t(projectData.descriptionKey)}</p>
+        </div>
+        {/* Technologies */}
+      </div>
     </CardTemplate>
   );
 };
