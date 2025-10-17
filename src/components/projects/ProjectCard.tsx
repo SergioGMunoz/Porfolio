@@ -64,10 +64,14 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
             />
           </div>
         </div>
+        {/* Technologies */}
+        <div className="flex flex-row gap-1">
+            
+        </div>
         {/* Description */}
         <div>
-          <div 
-            className="project-description text-xs opacity-75"
+          <div
+            className="project-description text-xs"
             style={{
               color: "var(--text-secondary)",
               transition: "color 0.3s ease",
@@ -85,7 +89,6 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
             </TextAnimate>
           </div>
         </div>
-        {/* Technologies */}
       </div>
     </CardTemplate>
   );
