@@ -1,5 +1,6 @@
 import CardTemplate from "./CardTemplate";
 import { useTranslation } from "react-i18next";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 interface ProjectDataInterface {
   projectData: {
@@ -14,7 +15,7 @@ interface ProjectDataInterface {
 }
 
 const ProjectCard = ({ projectData }: ProjectDataInterface) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <CardTemplate>
@@ -31,14 +32,21 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
         {/* Title */}
         <div className="flex flex-col items-center justify-between">
           <h5
-            className="project-title text-2xl font-bold text-center transition-all duration-500 opacity-0 animate-fade-in"
+            className="project-title text-2xl font-bold text-center"
             style={{
               color: "var(--color-accent)",
-              animationDelay: "0.2s",
-              animationFillMode: "forwards",
             }}
           >
-            {t(projectData.titleKey)}
+            <TextAnimate
+              key={`${projectData.id}-title-${i18n.language}`}
+              animation="slideUp"
+              duration={0.8}
+              by="character"
+              startOnView={true}
+              delay={0.2}
+            >
+              {t(projectData.titleKey)}
+            </TextAnimate>
           </h5>
         </div>
         {/* IMG */}
@@ -58,15 +66,24 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
         </div>
         {/* Description */}
         <div>
-          <p 
+          <div 
             className="project-description text-xs opacity-75"
             style={{
               color: "var(--text-secondary)",
               transition: "color 0.3s ease",
             }}
           >
-            {t(projectData.descriptionKey)}
-          </p>
+            <TextAnimate
+              key={`${projectData.id}-description-${i18n.language}`}
+              animation="slideLeft"
+              duration={1}
+              by="character"
+              startOnView={true}
+              delay={0.5}
+            >
+              {t(projectData.descriptionKey)}
+            </TextAnimate>
+          </div>
         </div>
         {/* Technologies */}
       </div>

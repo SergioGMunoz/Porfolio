@@ -1,6 +1,7 @@
 import { Marquee } from "../ui/marquee";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
+import { TextAnimate } from "@/components/ui/text-animate";
 // React Icons - logos de otras herramientas
 import { 
   FaGitAlt,
@@ -86,19 +87,26 @@ const TechnologyCard = ({
 };
 
 export function OtherTechnologies() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   
   return (
     <div className="mb-8">
       <h3 
-        className="text-3xl font-bold text-center mb-2 transition-all duration-500 opacity-0 animate-fade-in text-accent"
+        className="text-3xl font-bold text-center mb-2"
         style={{ 
-          color: 'var(--color-accent)',
-          animationDelay: '0.8s',
-          animationFillMode: 'forwards'
+          color: 'var(--color-accent)'
         }}
       >
-        {t('stack.others')}
+        <TextAnimate
+          key={`others-title-${i18n.language}`}
+          animation="slideUp"
+          duration={0.8}
+          by="character"
+          startOnView={true}
+          delay={0.1}
+        >
+          {t('stack.others')}
+        </TextAnimate>
       </h3>
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
         <Marquee 
