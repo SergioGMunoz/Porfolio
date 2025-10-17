@@ -17,21 +17,21 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
   const { t } = useTranslation();
 
   return (
-    //   <h1>{projectData.titleKey}</h1>
-    //   <img ></img>
     <CardTemplate>
       <div
-        className="flex w-80 flex-col gap-2 rounded-[16px] border-0 bg-[#1F2121] dark:bg-[#fafafa] p-2  md:my-20 md:p-4"
+        className="project-card flex w-80 flex-col gap-2 rounded-[16px] border-0 p-2 md:my-20 md:p-4"
         style={{
           transformStyle: "preserve-3d",
           transform: "none",
           opacity: 1,
+          backgroundColor: "var(--bg-secondary)",
+          transition: "background-color 0.3s ease",
         }}
       >
         {/* Title */}
-        <div className="flex flex-col items-center justify-between  text-accent">
+        <div className="flex flex-col items-center justify-between">
           <h5
-            className="text-2xl font-bold text-center transition-all duration-500 opacity-0 animate-fade-in text-accent"
+            className="project-title text-2xl font-bold text-center transition-all duration-500 opacity-0 animate-fade-in"
             style={{
               color: "var(--color-accent)",
               animationDelay: "0.2s",
@@ -48,7 +48,7 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
               loading="lazy"
               className="absolute inset-0 h-full w-full rounded-[16px] bg-[#000000] object-cover contrast-75"
               src={projectData.picture}
-              alt={projectData.titleKey}
+              alt={t(projectData.titleKey)}
               style={{
                 boxShadow: "rgba(0, 0, 0, 0.05) 0px 5px 6px 0px",
                 opacity: 1,
@@ -58,7 +58,15 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
         </div>
         {/* Description */}
         <div>
-          <p className=" text-xs text-black dark:text-gray-300 opacity-75">{t(projectData.descriptionKey)}</p>
+          <p 
+            className="project-description text-xs opacity-75"
+            style={{
+              color: "var(--text-secondary)",
+              transition: "color 0.3s ease",
+            }}
+          >
+            {t(projectData.descriptionKey)}
+          </p>
         </div>
         {/* Technologies */}
       </div>
