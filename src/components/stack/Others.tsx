@@ -12,7 +12,6 @@ import {
 } from 'react-icons/fa';
 import { SiDocker } from 'react-icons/si';
 import { 
-  SiFigma,
   SiNotion
 } from 'react-icons/si';
 
