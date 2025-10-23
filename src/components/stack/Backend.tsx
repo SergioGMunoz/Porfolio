@@ -1,6 +1,7 @@
 import { Marquee } from "../ui/marquee";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
+import { TextAnimate } from "@/components/ui/text-animate";
 // React Icons - logos de tecnologías backend
 import { 
   FaNodeJs,
@@ -16,27 +17,27 @@ const backendTechnologies = [
   {
     name: "PHP",
     level: 3,
-    icon: <SiPhp size={32} style={{ color: '#777BB4' }} />, // Color oficial de PHP
+    icon: <SiPhp size={32} style={{ color: '#777BB4' }} />,
   },
   {
     name: "Laravel",
     level: 3,
-    icon: <SiLaravel size={32} style={{ color: '#FF2D20' }} />, // Color oficial de Laravel
+    icon: <SiLaravel size={32} style={{ color: '#FF2D20' }} />,
   },
   {
     name: "Java",
     level: 3,
-    icon: <FaJava size={32} style={{ color: '#ED8B00' }} />, // Color original naranja de Java
+    icon: <FaJava size={32} style={{ color: '#ED8B00' }} />,
   },
   {
     name: "Python",
-    level: 2, 
-    icon: <FaPython size={32} style={{ color: '#3776AB' }} />, // Color oficial de Python
+    level: 2,
+    icon: <FaPython size={32} style={{ color: '#3776AB' }} />,
   },
   {
     name: "Node.js",
     level: 2,
-    icon: <FaNodeJs size={32} style={{ color: '#339933' }} />, // Color oficial de Node.js
+    icon: <FaNodeJs size={32} style={{ color: '#339933' }} />,
   },
 ];
 
@@ -86,19 +87,26 @@ const TechnologyCard = ({
 };
 
 export function BackendTechnologies() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   
   return (
     <div className="mb-8">
       <h3 
-        className="text-3xl font-bold text-center mb-2 transition-all duration-500 opacity-0 animate-fade-in text-accent"
+        className="text-3xl font-bold text-center mb-2"
         style={{ 
-          color: 'var(--color-accent)',
-          animationDelay: '0.4s',
-          animationFillMode: 'forwards'
+          color: 'var(--color-accent)'
         }}
       >
-        {t('stack.backend')}
+        <TextAnimate
+          key={`backend-title-${i18n.language}`}
+          animation="slideUp"
+          duration={0.8}
+          by="character"
+          startOnView={true}
+          delay={0.1}
+        >
+          {t('stack.backend')}
+        </TextAnimate>
       </h3>
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
         <Marquee 

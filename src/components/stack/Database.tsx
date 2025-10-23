@@ -1,11 +1,8 @@
 import { Marquee } from "../ui/marquee";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
+import { TextAnimate } from "@/components/ui/text-animate";
 // React Icons - logos de bases de datos y cloud
-import { 
-  FaAws,
-  FaCloud
-} from 'react-icons/fa';
 import { 
   SiMysql,
   SiMongodb,
@@ -16,27 +13,17 @@ const databaseTechnologies = [
   {
     name: "MySQL",
     level: 3,
-    icon: <SiMysql size={32} style={{ color: '#4479A1' }} />, // Color oficial de MySQL
+    icon: <SiMysql size={32} style={{ color: '#4479A1' }} />,
   },
   {
     name: "PL/SQL",
-    level: 3,
-    icon: <SiOracle size={32} style={{ color: '#F80000' }} />, // Color oficial de Oracle
+    level: 2,
+    icon: <SiOracle size={32} style={{ color: '#F80000' }} />,
   },
   {
     name: "MongoDB",
     level: 2,
-    icon: <SiMongodb size={32} style={{ color: '#47A248' }} />, // Color oficial de MongoDB
-  },
-  {
-    name: "Azure",
-    level: 1,
-    icon: <FaCloud size={32} style={{ color: '#0078D4' }} />, // Ícono genérico de cloud para Azure
-  },
-  {
-    name: "AWS",
-    level: 1,
-    icon: <FaAws size={32} style={{ color: '#FF9900' }} />, // Color oficial de AWS
+    icon: <SiMongodb size={32} style={{ color: '#47A248' }} />,
   },
 ];
 
@@ -87,19 +74,26 @@ const TechnologyCard = ({
 };
 
 export function DatabaseTechnologies() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   
   return (
     <div className="mb-8">
       <h3 
-        className="text-3xl font-bold text-center mb-2 transition-all duration-500 opacity-0 animate-fade-in text-accent"
+        className="text-3xl font-bold text-center mb-2"
         style={{ 
-          color: 'var(--color-accent)',
-          animationDelay: '0.6s',
-          animationFillMode: 'forwards'
+          color: 'var(--color-accent)'
         }}
       >
-        {t('stack.database')}
+        <TextAnimate
+          key={`database-title-${i18n.language}`}
+          animation="slideUp"
+          duration={0.8}
+          by="character"
+          startOnView={true}
+          delay={0.1}
+        >
+          {t('stack.database')}
+        </TextAnimate>
       </h3>
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
         <Marquee 

@@ -37,5 +37,12 @@
   },
   "methodologies": {
     "agile": "Metodología Ágil"
+  },
+  "projects" : {
+    "title":"Proyectos",
+    "MurciaH&R" : {
+      "title" : "MurciaH&R",
+      "description" : "Proyecto de consulta sobre hoteles y restaurantes en la region de Murcia, permite filtrado y consulta de los mismos"
+    }
   }
 }
