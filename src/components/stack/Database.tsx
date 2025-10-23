@@ -4,10 +4,6 @@ import { useTranslation } from "react-i18next";
 import { TextAnimate } from "@/components/ui/text-animate";
 // React Icons - logos de bases de datos y cloud
 import { 
-  FaAws,
-  FaCloud
-} from 'react-icons/fa';
-import { 
   SiMysql,
   SiMongodb,
   SiOracle
@@ -17,27 +13,17 @@ const databaseTechnologies = [
   {
     name: "MySQL",
     level: 3,
-    icon: <SiMysql size={32} style={{ color: '#4479A1' }} />, // Color oficial de MySQL
+    icon: <SiMysql size={32} style={{ color: '#4479A1' }} />,
   },
   {
     name: "PL/SQL",
-    level: 3,
-    icon: <SiOracle size={32} style={{ color: '#F80000' }} />, // Color oficial de Oracle
+    level: 2,
+    icon: <SiOracle size={32} style={{ color: '#F80000' }} />,
   },
   {
     name: "MongoDB",
     level: 2,
-    icon: <SiMongodb size={32} style={{ color: '#47A248' }} />, // Color oficial de MongoDB
-  },
-  {
-    name: "Azure",
-    level: 1,
-    icon: <FaCloud size={32} style={{ color: '#0078D4' }} />, // Ícono genérico de cloud para Azure
-  },
-  {
-    name: "AWS",
-    level: 1,
-    icon: <FaAws size={32} style={{ color: '#FF9900' }} />, // Color oficial de AWS
+    icon: <SiMongodb size={32} style={{ color: '#47A248' }} />,
   },
 ];
 

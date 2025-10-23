@@ -17,27 +17,27 @@ const backendTechnologies = [
   {
     name: "PHP",
     level: 3,
-    icon: <SiPhp size={32} style={{ color: '#777BB4' }} />, // Color oficial de PHP
+    icon: <SiPhp size={32} style={{ color: '#777BB4' }} />,
   },
   {
     name: "Laravel",
     level: 3,
-    icon: <SiLaravel size={32} style={{ color: '#FF2D20' }} />, // Color oficial de Laravel
+    icon: <SiLaravel size={32} style={{ color: '#FF2D20' }} />,
   },
   {
     name: "Java",
     level: 3,
-    icon: <FaJava size={32} style={{ color: '#ED8B00' }} />, // Color original naranja de Java
+    icon: <FaJava size={32} style={{ color: '#ED8B00' }} />,
   },
   {
     name: "Python",
-    level: 2, 
-    icon: <FaPython size={32} style={{ color: '#3776AB' }} />, // Color oficial de Python
+    level: 2,
+    icon: <FaPython size={32} style={{ color: '#3776AB' }} />,
   },
   {
     name: "Node.js",
     level: 2,
-    icon: <FaNodeJs size={32} style={{ color: '#339933' }} />, // Color oficial de Node.js
+    icon: <FaNodeJs size={32} style={{ color: '#339933' }} />,
   },
 ];
 

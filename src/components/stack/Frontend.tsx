@@ -5,57 +5,51 @@ import { TextAnimate } from "@/components/ui/text-animate";
 // React Icons - logos reales de tecnologías frontend
 import { 
   FaReact, 
-  FaJs, 
-  FaBootstrap
+  FaJs
 } from 'react-icons/fa';
 import { 
   SiTypescript, 
   SiNextdotjs, 
   SiTailwindcss, 
-  SiVite,
-  SiVuedotjs
+  SiVuedotjs,
+  SiAstro,
 } from 'react-icons/si';
 
 const frontendTechnologies = [
   {
     name: "React",
     level: 3,
-    icon: <FaReact size={32} style={{ color: '#61DAFB' }} />, // Color oficial de React
+    icon: <FaReact size={32} style={{ color: '#61DAFB' }} />,
   },
   {
     name: "TypeScript",
     level: 3,
-    icon: <SiTypescript size={32} style={{ color: '#3178C6' }} />, // Color oficial de TypeScript
+    icon: <SiTypescript size={32} style={{ color: '#3178C6' }} />,
   },
   {
     name: "JavaScript",
-    level: 3, 
-    icon: <FaJs size={32} style={{ color: '#F7DF1E' }} />, // Color oficial de JavaScript
+    level: 3,
+    icon: <FaJs size={32} style={{ color: '#F7DF1E' }} />,
   },
   {
     name: "Tailwind CSS",
-    level: 3,
-    icon: <SiTailwindcss size={32} style={{ color: '#06B6D4' }} />, // Color oficial de Tailwind
+    level: 2,
+    icon: <SiTailwindcss size={32} style={{ color: '#06B6D4' }} />,
   },
   {
-    name: "Bootstrap",
+    name: "Astro",
     level: 2,
-    icon: <FaBootstrap size={32} style={{ color: '#7952B3' }} />, // Color oficial de Bootstrap
+    icon: <SiAstro size={32} style={{ color: '#FF5D01' }} />, // Color oficial de Astro
   },
   {
     name: "Vue.js",
     level: 1,
-    icon: <SiVuedotjs size={32} style={{ color: '#4FC08D' }} />, // Color oficial de Vue
+    icon: <SiVuedotjs size={32} style={{ color: '#4FC08D' }} />,
   },
   {
     name: "Next.js",
     level: 1,
-    icon: <SiNextdotjs size={32} style={{ color: 'var(--text-primary)' }} />, // Usa color del tema
-  },
-  {
-    name: "Vite",
-    level: 1,
-    icon: <SiVite size={32} style={{ color: '#646CFF' }} />, // Color oficial de Vite
+    icon: <SiNextdotjs size={32} style={{ color: 'var(--text-primary)' }} />,
   },
 ];
 
