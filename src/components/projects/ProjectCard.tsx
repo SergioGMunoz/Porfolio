@@ -12,11 +12,14 @@ interface ProjectDataInterface {
     link: string;
     readmeLink: string;
   };
-  onClick?: () => void;
 }
 
-const ProjectCard = ({ projectData, onClick }: ProjectDataInterface) => {
+const ProjectCard = ({ projectData }: ProjectDataInterface) => {
   const { t } = useTranslation();
+
+  const handleClick = () => {
+    window.open(projectData.link, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <CardTemplate>
@@ -29,7 +32,7 @@ const ProjectCard = ({ projectData, onClick }: ProjectDataInterface) => {
           backgroundColor: "var(--bg-secondary)",
           transition: "background-color 0.3s ease, transform 0.2s ease",
         }}
-        onClick={onClick}
+        onClick={handleClick}
       >
         {/* Title */}
         <div className="flex flex-col items-center justify-between">
