@@ -21,7 +21,7 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
   return (
     <CardTemplate>
       <div
-        className="project-card flex w-80 flex-col gap-2 rounded-[16px] border-0 p-2 md:my-20 md:p-4"
+        className="project-card flex w-full max-w-sm flex-col gap-2 rounded-[16px] border-0 p-2 md:p-4"
         style={{
           transformStyle: "preserve-3d",
           transform: "none",

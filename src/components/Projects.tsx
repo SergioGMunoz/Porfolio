@@ -27,9 +27,9 @@ const Projects = () => {
         </TextAnimate>
       </h3>
       {/* Projects */}
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 justify-items-center">
         {projectsData.length <= 0 ? (
-          <p>No hay proyectos a mostrar actualmente</p>
+          <p className="col-span-full text-center">No hay proyectos a mostrar actualmente</p>
         ) : (
           projectsData.map((p) => {
             return (<ProjectCard key={p.id} projectData={p}/>)
