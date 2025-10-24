@@ -41,6 +41,9 @@
   },
   "projects" : {
     "title":"Proyectos",
+    "noReadme": "README no disponible",
+    "loadingReadme": "Cargando README...",
+    "errorReadme": "Error al cargar el contenido del README",
     "BoardGames-manager" : {
       "title" : "Board Games Manager",
       "description" : "Aplicación de escritorio para una empresa de juegos de mesa donde los usuarios pueden crear perfiles y hacer diferentes reservas o consultar juegos. Incluye autenticación, filtrado de juegos, descarga de reservas en PDF y sistema de ranking."

@@ -41,6 +41,9 @@
   },
    "projects" : {
     "title":"Projects",
+    "noReadme": "No README available",
+    "loadingReadme": "Loading README...",
+    "errorReadme": "Error loading README content",
     "BoardGames-manager" : {
       "title" : "Board Games Manager",
       "description" : "Desktop application for a board game company where users can create profiles and make different reservations or consult games. Includes authentication, game filtering, PDF reservation downloads, and ranking system."
