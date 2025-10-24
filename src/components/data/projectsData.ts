@@ -82,8 +82,8 @@ const projectsData = [
     descriptionKey: "projects.Sistema-de-autenticacion-centralizado.description",
     stack: [tech.laravel, tech.php, tech.vue, tech.react, tech.mysql],
     picture: "/projects/Sistema-de-autenticacion-centralizado.png",
-    link: "https://github.com/SergioGMunoz/Sistema-de-autenticacion-centralizado",
-    readmeLink: `https://raw.githubusercontent.com/SergioGMunoz/Sistema-de-autenticacion-centralizado/main/README.md`,
+    link: "https://github.com/SergioGMunoz/Central-Auth",
+    readmeLink: `https://raw.githubusercontent.com/SergioGMunoz/Central-Auth/main/README.md`,
   },
   {
     id: 4,
@@ -109,8 +109,8 @@ const projectsData = [
     descriptionKey: "projects.Laberinto.description",
     stack: [tech.java, tech.swing, tech.jdbc, tech.mysql],
     picture: "/projects/Laberinto.png",
-    link: "https://github.com/SergioGMunoz/Laberinto",
-    readmeLink: `https://raw.githubusercontent.com/SergioGMunoz/Laberinto/main/README.md`,
+    link: "https://github.com/SergioGMunoz/Maze-Creator",
+    readmeLink: `https://raw.githubusercontent.com/SergioGMunoz/Maze-Creator/main/README.md`,
   },
   {
     id: 7,
