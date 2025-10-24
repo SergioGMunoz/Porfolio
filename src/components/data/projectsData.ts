@@ -65,7 +65,6 @@ const projectsData = [
     stack: [tech.java, tech.swing, tech.mysql, tech.jdbc, tech.maven],
     picture: "/projects/BoardGames-manager.png",
     link: "https://github.com/SergioGMunoz/BoardGames-manager",
-    readmeLink: `https://raw.githubusercontent.com/SergioGMunoz/BoardGames-manager/main/README.md`,
   },
   {
     id: 2,
@@ -74,7 +73,6 @@ const projectsData = [
     stack: [tech.html, tech.css, tech.javascript],
     picture: "/projects/Disney-Chatbots.png",
     link: "https://github.com/SergioGMunoz/Disney-Chatbots",
-    readmeLink: `https://raw.githubusercontent.com/SergioGMunoz/Disney-Chatbots/main/README.md`,
   },
   {
     id: 3,
@@ -83,7 +81,6 @@ const projectsData = [
     stack: [tech.laravel, tech.php, tech.vue, tech.react, tech.mysql],
     picture: "/projects/Sistema-de-autenticacion-centralizado.png",
     link: "https://github.com/SergioGMunoz/Central-Auth",
-    readmeLink: `https://raw.githubusercontent.com/SergioGMunoz/Central-Auth/main/README.md`,
   },
   {
     id: 4,
@@ -92,7 +89,6 @@ const projectsData = [
     stack: [tech.react, tech.vite, tech.javascript],
     picture: "/projects/MurciaH&R.png",
     link: "https://github.com/SergioGMunoz/Murcia-H-R",
-    readmeLink: `https://raw.githubusercontent.com/SergioGMunoz/Murcia-H-R/main/README.md`,
   },
   {
     id: 5,
@@ -101,7 +97,6 @@ const projectsData = [
     stack: [tech.html, tech.tailwind, tech.javascript],
     picture: "/projects/Mechanography-for-developers.png",
     link: "https://github.com/SergioGMunoz/Mechanography-for-developers",
-    readmeLink: `https://raw.githubusercontent.com/SergioGMunoz/Mechanography-for-developers/main/README.md`,
   },
   {
     id: 6,
@@ -110,7 +105,6 @@ const projectsData = [
     stack: [tech.java, tech.swing, tech.jdbc, tech.mysql],
     picture: "/projects/Laberinto.png",
     link: "https://github.com/SergioGMunoz/Maze-Creator",
-    readmeLink: `https://raw.githubusercontent.com/SergioGMunoz/Maze-Creator/main/README.md`,
   },
   {
     id: 7,
@@ -119,7 +113,6 @@ const projectsData = [
     stack: [tech.react, tech.vite, tech.javascript, tech.css],
     picture: "/projects/Lovers-Web-App.png",
     link: "https://github.com/SergioGMunoz/Lovers-Web-App",
-    readmeLink: `https://raw.githubusercontent.com/SergioGMunoz/Lovers-Web-App/main/README.md`,
   },
 ];
 

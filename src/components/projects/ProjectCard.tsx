@@ -10,7 +10,6 @@ interface ProjectDataInterface {
     stack: Array<{text: string; color: string}>;
     picture: string;
     link: string;
-    readmeLink: string;
   };
 }
 
