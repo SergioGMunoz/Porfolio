@@ -12,22 +12,24 @@ interface ProjectDataInterface {
     link: string;
     readmeLink: string;
   };
+  onClick?: () => void;
 }
 
-const ProjectCard = ({ projectData }: ProjectDataInterface) => {
+const ProjectCard = ({ projectData, onClick }: ProjectDataInterface) => {
   const { t } = useTranslation();
 
   return (
     <CardTemplate>
       <div
-        className="project-card flex w-full max-w-sm flex-col gap-2 rounded-[16px] border-0 p-2 md:p-4"
+        className="project-card flex w-full max-w-sm flex-col gap-2 rounded-[16px] border-0 p-2 md:p-4 cursor-pointer transition-transform duration-200 hover:scale-105"
         style={{
           transformStyle: "preserve-3d",
           transform: "none",
           opacity: 1,
           backgroundColor: "var(--bg-secondary)",
-          transition: "background-color 0.3s ease",
+          transition: "background-color 0.3s ease, transform 0.2s ease",
         }}
+        onClick={onClick}
       >
         {/* Title */}
         <div className="flex flex-col items-center justify-between">

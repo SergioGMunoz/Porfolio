@@ -1,10 +1,25 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import ProjectCard from "@/components/projects/ProjectCard";
+import ModalProject from "@/components/projects/ModalProject";
 import { TextAnimate } from "@/components/ui/text-animate";
 // Proyect: [{id, title, description, stack, picture, link, readmeLink }]
 import projectsData from "./data/projectsData";
+
 const Projects = () => {
   const { t, i18n } = useTranslation();
+  const [selectedProject, setSelectedProject] = useState<typeof projectsData[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleProjectClick = (project: typeof projectsData[0]) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
 
   return (
     <div>
@@ -32,10 +47,19 @@ const Projects = () => {
           <p className="col-span-full text-center">No hay proyectos a mostrar actualmente</p>
         ) : (
           projectsData.map((p) => {
-            return (<ProjectCard key={p.id} projectData={p}/>)
+            return (<ProjectCard key={p.id} projectData={p} onClick={() => handleProjectClick(p)}/>)
           })
         )}
       </div>
+
+      {/* Modal */}
+      {selectedProject && (
+        <ModalProject
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          projectData={selectedProject}
+        />
+      )}
     </div>
   );
 };

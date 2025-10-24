@@ -5,7 +5,8 @@
     "dark": "Dark",
     "light": "Light",
     "color": "Color {{color}}",
-    "language": "{{lang}}"
+    "language": "{{lang}}",
+    "github": "View on GitHub"
   },
   "hero": {
     "greeting": "Hello, I'm Sergio",
