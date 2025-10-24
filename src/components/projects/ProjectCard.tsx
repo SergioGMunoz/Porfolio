@@ -69,7 +69,7 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
 
         {/* Technologies */}
         {projectData.stack.length > 0 && (
-        <div className="flex flex-row gap-1">
+        <div className="flex flex-row gap-1 justify-center align-center text-center">
             {projectData.stack.map((e, index) => {
               return (
                 <Badge key={index} text={e.text} color={e.color}/>
