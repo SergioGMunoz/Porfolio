@@ -49,7 +49,7 @@
       "description" : "Aplicación web que permite explorar personajes del universo Disney y preguntarles (a través de preguntas predefinidas) información sobre ellos. Incluye filtrado de personajes, chat con respuestas predefinidas y recuperación con localStorage."
     },
     "Sistema-de-autenticacion-centralizado" : {
-      "title" : "CentralAuth",
+      "title" : "Central Auth",
       "description" : "Sistema de Autenticación Centralizado (IdP/SSO) desarrollado para la universidad U-Tad. Proporciona un punto único de autenticación y gestión de identidades para todas las aplicaciones institucionales con tokens JWT, soporte OAuth2/OIDC y RBAC."
     },
     "MurciaH&R" : {
@@ -61,7 +61,7 @@
       "description" : "Aplicación web personal para práctica de mecanografía con lenguajes de programación. Editor de código interactivo para práctica de mecanografía con medición de velocidad y precisión, soportando cualquier lenguaje de programación."
     },
     "Laberinto" : {
-      "title" : "Laberinto",
+      "title" : "Maze Creator",
       "description" : "Juego en Java usando Swing donde el jugador se enfrenta a un laberinto con obstáculos (cocodrilos y botiquines), y solo puede avanzar respondiendo correctamente preguntas. Incluye creación de laberintos, gestión de preguntas y sistema de ranking."
     },
     "Lovers-Web-App" : {

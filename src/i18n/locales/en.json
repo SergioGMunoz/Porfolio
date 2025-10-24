@@ -49,7 +49,7 @@
       "description" : "Web application that allows you to explore Disney universe characters and ask them (through predefined questions) information about them. Features character filtering, chat with predefined responses, and localStorage recovery."
     },
     "Sistema-de-autenticacion-centralizado" : {
-      "title" : "CentralAuth",
+      "title" : "Central Auth",
       "description" : "Centralized Authentication System (IdP/SSO) developed for U-Tad university. Provides a single point of authentication and identity management for all institutional applications with JWT tokens, OAuth2/OIDC support, and RBAC."
     },
     "MurciaH&R" : {
@@ -61,7 +61,7 @@
       "description" : "Personal web app for programming language typing practice. Interactive code editor for mechanography practice with speed and accuracy measurement, supporting any programming language."
     },
     "Laberinto" : {
-      "title" : "Laberinto",
+      "title" : "Maze Creator",
       "description" : "Java game using Swing where the player faces a maze with obstacles (crocodiles and first aid kits), and can only advance by correctly answering questions. Includes maze creation, question management, and ranking system."
     },
     "Lovers-Web-App" : {
