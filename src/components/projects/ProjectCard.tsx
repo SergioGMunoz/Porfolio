@@ -1,13 +1,14 @@
 import CardTemplate from "./CardTemplate";
 import { useTranslation } from "react-i18next";
 import { TextAnimate } from "@/components/ui/text-animate";
+import Badge from "./Badge";
 
 interface ProjectDataInterface {
   projectData: {
     id: number;
     titleKey: string;
     descriptionKey: string;
-    stack: Array<string>;
+    stack: Array<{text: string; color: string}>;
     picture: string;
     link: string;
     readmeLink: string;
@@ -49,6 +50,7 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
             </TextAnimate>
           </h5>
         </div>
+
         {/* IMG */}
         <div className="flex-1">
           <div className="relative aspect-video w-full">
@@ -64,10 +66,18 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
             />
           </div>
         </div>
+
         {/* Technologies */}
+        {projectData.stack.length > 0 && (
         <div className="flex flex-row gap-1">
-            
+            {projectData.stack.map((e, index) => {
+              return (
+                <Badge key={index} text={e.text} color={e.color}/>
+              )
+            })}
         </div>
+        )}
+
         {/* Description */}
         <div>
           <div
