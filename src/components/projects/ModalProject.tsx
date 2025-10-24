@@ -1,22 +1,16 @@
 import { useTranslation } from "react-i18next";
 
-interface ProjectDataInterface {
-  projectData: {
-    id: number;
-    titleKey: string;
-    descriptionKey: string;
-    stack: Array<{text: string; color: string}>;
-    picture: string;
-    link: string;
-    readmeLink: string;
-  };
+interface ModalInterface {
+  github: string,
+  readme: string
 }
 
-const Modal = ({projectData} : ProjectDataInterface) => {
+const Modal = ({github, readme} : ModalInterface) => {
   const { t } = useTranslation();
     return (
         <div>
-            <h1>{t(projectData.titleKey)}</h1>
+           <button>
+           </button>
         </div>
     )
 }
