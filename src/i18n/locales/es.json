@@ -40,9 +40,33 @@
   },
   "projects" : {
     "title":"Proyectos",
+    "BoardGames-manager" : {
+      "title" : "Board Games Manager",
+      "description" : "Aplicación de escritorio para una empresa de juegos de mesa donde los usuarios pueden crear perfiles y hacer diferentes reservas o consultar juegos. Incluye autenticación, filtrado de juegos, descarga de reservas en PDF y sistema de ranking."
+    },
+    "Disney-Chatbots" : {
+      "title" : "Disney Chatbots",
+      "description" : "Aplicación web que permite explorar personajes del universo Disney y preguntarles (a través de preguntas predefinidas) información sobre ellos. Incluye filtrado de personajes, chat con respuestas predefinidas y recuperación con localStorage."
+    },
+    "Sistema-de-autenticacion-centralizado" : {
+      "title" : "CentralAuth",
+      "description" : "Sistema de Autenticación Centralizado (IdP/SSO) desarrollado para la universidad U-Tad. Proporciona un punto único de autenticación y gestión de identidades para todas las aplicaciones institucionales con tokens JWT, soporte OAuth2/OIDC y RBAC."
+    },
     "MurciaH&R" : {
       "title" : "MurciaH&R",
       "description" : "Proyecto de consulta sobre hoteles y restaurantes en la region de Murcia, permite filtrado y consulta de los mismos"
+    },
+    "Mechanography-for-developers" : {
+      "title" : "Mechanography for Developers",
+      "description" : "Aplicación web personal para práctica de mecanografía con lenguajes de programación. Editor de código interactivo para práctica de mecanografía con medición de velocidad y precisión, soportando cualquier lenguaje de programación."
+    },
+    "Laberinto" : {
+      "title" : "Laberinto",
+      "description" : "Juego en Java usando Swing donde el jugador se enfrenta a un laberinto con obstáculos (cocodrilos y botiquines), y solo puede avanzar respondiendo correctamente preguntas. Incluye creación de laberintos, gestión de preguntas y sistema de ranking."
+    },
+    "Lovers-Web-App" : {
+      "title" : "Lovers Web App",
+      "description" : "Proyecto de clase para recopilar información de usuarios para el registro en un sitio web de citas. Proporciona un flujo completo de registro de usuario con gestión de perfil y almacenamiento local de datos."
     }
   }
 }

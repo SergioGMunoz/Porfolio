@@ -40,9 +40,33 @@
   },
    "projects" : {
     "title":"Projects",
+    "BoardGames-manager" : {
+      "title" : "Board Games Manager",
+      "description" : "Desktop application for a board game company where users can create profiles and make different reservations or consult games. Includes authentication, game filtering, PDF reservation downloads, and ranking system."
+    },
+    "Disney-Chatbots" : {
+      "title" : "Disney Chatbots",
+      "description" : "Web application that allows you to explore Disney universe characters and ask them (through predefined questions) information about them. Features character filtering, chat with predefined responses, and localStorage recovery."
+    },
+    "Sistema-de-autenticacion-centralizado" : {
+      "title" : "CentralAuth",
+      "description" : "Centralized Authentication System (IdP/SSO) developed for U-Tad university. Provides a single point of authentication and identity management for all institutional applications with JWT tokens, OAuth2/OIDC support, and RBAC."
+    },
     "MurciaH&R" : {
       "title" : "MurciaH&R",
       "description" : "Project that show hotels and restaurants in Murcia / Spain and you cant filter the information and navegate to the institution link"
+    },
+    "Mechanography-for-developers" : {
+      "title" : "Mechanography for Developers",
+      "description" : "Personal web app for programming language typing practice. Interactive code editor for mechanography practice with speed and accuracy measurement, supporting any programming language."
+    },
+    "Laberinto" : {
+      "title" : "Laberinto",
+      "description" : "Java game using Swing where the player faces a maze with obstacles (crocodiles and first aid kits), and can only advance by correctly answering questions. Includes maze creation, question management, and ranking system."
+    },
+    "Lovers-Web-App" : {
+      "title" : "Lovers Web App",
+      "description" : "Class project to collect user information for registration on a dating website. Provides a complete user registration flow with profile management and local data storage."
     }
   }
 }
