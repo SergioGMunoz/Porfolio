@@ -1,6 +1,5 @@
 import CardTemplate from "./CardTemplate";
 import { useTranslation } from "react-i18next";
-import { TextAnimate } from "@/components/ui/text-animate";
 import Badge from "./Badge";
 
 interface ProjectDataInterface {
@@ -16,7 +15,7 @@ interface ProjectDataInterface {
 }
 
 const ProjectCard = ({ projectData }: ProjectDataInterface) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <CardTemplate>
@@ -38,16 +37,7 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
               color: "var(--color-accent)",
             }}
           >
-            <TextAnimate
-              key={`${projectData.id}-title-${i18n.language}`}
-              animation="slideUp"
-              duration={0.8}
-              by="character"
-              startOnView={true}
-              delay={0.2}
-            >
-              {t(projectData.titleKey)}
-            </TextAnimate>
+            {t(projectData.titleKey)}
           </h5>
         </div>
 
@@ -87,16 +77,7 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
               transition: "color 0.3s ease",
             }}
           >
-            <TextAnimate
-              key={`${projectData.id}-description-${i18n.language}`}
-              animation="slideLeft"
-              duration={1}
-              by="character"
-              startOnView={true}
-              delay={0.5}
-            >
-              {t(projectData.descriptionKey)}
-            </TextAnimate>
+            {t(projectData.descriptionKey)}
           </div>
         </div>
       </div>
