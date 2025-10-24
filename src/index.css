@@ -142,27 +142,3 @@ body {
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
 }
-
-/* Estilos personalizados para scrollbar del README */
-.readme-content {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-accent) transparent;
-}
-
-.readme-content::-webkit-scrollbar {
-  width: 6px;
-}
-
-.readme-content::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.readme-content::-webkit-scrollbar-thumb {
-  background: var(--color-accent);
-  border-radius: 3px;
-  opacity: 0.7;
-}
-
-.readme-content::-webkit-scrollbar-thumb:hover {
-  opacity: 1;
-}
