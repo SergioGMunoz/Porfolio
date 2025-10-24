@@ -1,33 +1,35 @@
 import CardTemplate from "./CardTemplate";
 import { useTranslation } from "react-i18next";
-import { TextAnimate } from "@/components/ui/text-animate";
+import Badge from "./Badge";
 
 interface ProjectDataInterface {
   projectData: {
     id: number;
     titleKey: string;
     descriptionKey: string;
-    stack: Array<string>;
+    stack: Array<{text: string; color: string}>;
     picture: string;
     link: string;
     readmeLink: string;
   };
+  onClick?: () => void;
 }
 
-const ProjectCard = ({ projectData }: ProjectDataInterface) => {
-  const { t, i18n } = useTranslation();
+const ProjectCard = ({ projectData, onClick }: ProjectDataInterface) => {
+  const { t } = useTranslation();
 
   return (
     <CardTemplate>
       <div
-        className="project-card flex w-80 flex-col gap-2 rounded-[16px] border-0 p-2 md:my-20 md:p-4"
+        className="project-card flex w-full max-w-sm flex-col gap-2 rounded-[16px] border-0 p-2 md:p-4 cursor-pointer transition-transform duration-200 hover:scale-105"
         style={{
           transformStyle: "preserve-3d",
           transform: "none",
           opacity: 1,
           backgroundColor: "var(--bg-secondary)",
-          transition: "background-color 0.3s ease",
+          transition: "background-color 0.3s ease, transform 0.2s ease",
         }}
+        onClick={onClick}
       >
         {/* Title */}
         <div className="flex flex-col items-center justify-between">
@@ -37,18 +39,10 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
               color: "var(--color-accent)",
             }}
           >
-            <TextAnimate
-              key={`${projectData.id}-title-${i18n.language}`}
-              animation="slideUp"
-              duration={0.8}
-              by="character"
-              startOnView={true}
-              delay={0.2}
-            >
-              {t(projectData.titleKey)}
-            </TextAnimate>
+            {t(projectData.titleKey)}
           </h5>
         </div>
+
         {/* IMG */}
         <div className="flex-1">
           <div className="relative aspect-video w-full">
@@ -64,10 +58,18 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
             />
           </div>
         </div>
+
         {/* Technologies */}
-        <div className="flex flex-row gap-1">
-            
+        {projectData.stack.length > 0 && (
+        <div className="flex flex-row gap-1 justify-center align-center text-center">
+            {projectData.stack.map((e, index) => {
+              return (
+                <Badge key={index} text={e.text} color={e.color}/>
+              )
+            })}
         </div>
+        )}
+
         {/* Description */}
         <div>
           <div
@@ -77,16 +79,7 @@ const ProjectCard = ({ projectData }: ProjectDataInterface) => {
               transition: "color 0.3s ease",
             }}
           >
-            <TextAnimate
-              key={`${projectData.id}-description-${i18n.language}`}
-              animation="slideLeft"
-              duration={1}
-              by="character"
-              startOnView={true}
-              delay={0.5}
-            >
-              {t(projectData.descriptionKey)}
-            </TextAnimate>
+            {t(projectData.descriptionKey)}
           </div>
         </div>
       </div>
