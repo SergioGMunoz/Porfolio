@@ -92,14 +92,6 @@ const projectsData = [
   },
   {
     id: 5,
-    titleKey: "projects.Mechanography-for-developers.title",
-    descriptionKey: "projects.Mechanography-for-developers.description",
-    stack: [tech.html, tech.tailwind, tech.javascript],
-    picture: "/projects/Mechanography-for-developers.png",
-    link: "https://github.com/SergioGMunoz/Mechanography-for-developers",
-  },
-  {
-    id: 6,
     titleKey: "projects.Laberinto.title",
     descriptionKey: "projects.Laberinto.description",
     stack: [tech.java, tech.swing, tech.jdbc, tech.mysql],
@@ -107,12 +99,12 @@ const projectsData = [
     link: "https://github.com/SergioGMunoz/Maze-Creator",
   },
   {
-    id: 7,
-    titleKey: "projects.Lovers-Web-App.title",
-    descriptionKey: "projects.Lovers-Web-App.description",
-    stack: [tech.react, tech.vite, tech.javascript, tech.css],
-    picture: "/projects/Lovers-Web-App.png",
-    link: "https://github.com/SergioGMunoz/Lovers-Web-App",
+    id: 6,
+    titleKey: "projects.Mechanography-for-developers.title",
+    descriptionKey: "projects.Mechanography-for-developers.description",
+    stack: [tech.html, tech.tailwind, tech.javascript],
+    picture: "/projects/Mechanography-for-developers.png",
+    link: "https://github.com/SergioGMunoz/Mechanography-for-developers",
   },
 ];
 
